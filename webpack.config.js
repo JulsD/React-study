@@ -3,17 +3,18 @@ const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const BUILD_DIR = path.resolve(__dirname, 'src/client/public');
-const APP_DIR = path.resolve(__dirname, 'src/client/app');
+const BUILD_DIR = path.resolve(__dirname, 'dist');
+const SRC_DIR = path.resolve(__dirname, 'src');
+const APP_DIR = path.resolve(__dirname, 'src/app');
 
 const config = {
-  entry: APP_DIR + '/index.jsx',
+  entry: path.join(APP_DIR, 'index.jsx'),
   output: {
     path: BUILD_DIR,
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: './src/client'
+    contentBase: './src'
   },
   module : {
     loaders : [
@@ -25,8 +26,8 @@ const config = {
     ]
   },
   plugins: [new HtmlWebpackPlugin({
-      title: 'My App',
-      filename: 'src/client/index.html'
+      template: path.join(SRC_DIR, 'index.html'),
+      filename: 'index.html'
     })]
 };
 
