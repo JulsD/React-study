@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-import AwesomeComponent from './AwesomeComponent.jsx';
+import AwesomeComponent from './AwesomeComponent';
 
 class App extends React.Component {
   render () {
