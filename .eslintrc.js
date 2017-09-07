@@ -4,8 +4,7 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
-    "plugin:import/react",
-    "plugin:jsx-a11y/recommended"
+    "plugin:import/react"
   ],
   "settings": {
     "import/resolver": {
@@ -23,7 +22,8 @@ module.exports = {
   },
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "node": true
   },
   "rules": {
     "jsx-quotes": [2, "prefer-single"],
