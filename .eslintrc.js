@@ -22,8 +22,7 @@ module.exports = {
   },
   "env": {
     "browser": true,
-    "es6": true,
-    "node": true
+    "es6": true
   },
   "rules": {
     "jsx-quotes": [2, "prefer-single"],
@@ -35,10 +34,13 @@ module.exports = {
   ],
   "overrides": [
     {
-      files: ["*.config.js"],
+      files: ["*.config.js", "server/*"],
       "env": {
         "node": true,
         "browser": false
+      },
+      "rules": {
+        "no-console": 0
       }
     }
   ]
