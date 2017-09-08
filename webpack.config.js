@@ -35,7 +35,6 @@ const config = {
   },
   
   plugins: [new HtmlWebpackPlugin({
-      hash: true,
       template: path.join(SRC_DIR, 'index.html'),
       filename: 'index.html'
     })]
