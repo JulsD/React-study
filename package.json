@@ -4,13 +4,14 @@
   "description": "trainig mass",
   "main": "index.js",
   "scripts": {
-    "build:dev": "webpack -d --watch",
-    "build": "webpack -p",
     "eslint": "eslint",
-    "serve:dev": "webpack-dev-server --progress --colors --hot --config ./webpack.config.js",
-    "start:dev": "npm run serve:dev",
+    "build": "webpack",
+    "build:watch": "webpack -d --watch",
+    "serve": "webpack-dev-server --progress --colors --config ./webpack.config.js",
+    "start": "npm run serve",
+    "build:prod": "webpack -p",
     "serve:prod": "node server/app.js",
-    "prestart:prod": "npm run build",
+    "prestart:prod": "npm run build:prod",
     "start:prod": "npm run serve:prod"
   },
   "repository": {
