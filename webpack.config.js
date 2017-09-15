@@ -6,6 +6,8 @@ const BUILD_DIR = path.resolve(__dirname, 'dist');
 const SRC_DIR = path.resolve(__dirname, 'src');
 const APP_DIR = path.join(SRC_DIR, 'app');
 
+const isProd = (process.argv.indexOf('-p') !== -1);
+
 const config = {
   entry: path.join(APP_DIR, 'index.jsx'),
   output: {
@@ -36,5 +38,9 @@ const config = {
     })
   ]
 };
+
+if(isProd) {
+  config.devtool = 'source-map';
+}
 
 module.exports = config;
