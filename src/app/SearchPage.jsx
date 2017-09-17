@@ -9,7 +9,7 @@ class SearchPage extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {movieOpend: true};
+    this.state = {movieOpend: false};
   }
 
   render() {
@@ -17,10 +17,11 @@ class SearchPage extends React.Component {
     const style = {
       width: '100%'
     };
+    const movies = [1,2,3];
     return (
       <div style={style}>
-        <Header movieOpend={movieOpend}/>
-        <SearchResult movies={[1,2,3]}/>
+        <Header movieOpend={movieOpend} emptyResults = {movies ? false : true}/>
+        <SearchResult movies = {movies}/>
         <Footer />
       </div>
     );

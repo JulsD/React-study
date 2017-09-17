@@ -1,5 +1,5 @@
 import React from 'react';
-import MovieItem from './MovieItem';
+import MoviesList from './MoviesList';
 
 class SearchResult extends React.Component {
 
@@ -10,12 +10,16 @@ class SearchResult extends React.Component {
 
   render() {
     const movies = this.props.movies;
-    const listMovies = movies.map((movie) =>
-      <MovieItem key={movie.toString()} title={movie} />
-    );
+
+    let searchResultBody = null;
+    if (movies) {
+      searchResultBody = <MoviesList movies={movies}/>;
+    } else {
+      searchResultBody = 'No films found';
+    }
     return (
-      <div className="movies-wrapper">
-        {listMovies}
+      <div className="search-resuls">
+        {searchResultBody}
       </div>
     );
   }

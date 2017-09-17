@@ -12,6 +12,7 @@ class Header extends React.Component {
 
   render() {
     const movieOpend = this.props.movieOpend;
+    const emptyResults = this.props.emptyResults;
 
     let headerBody = null;
     if (movieOpend) {
@@ -28,7 +29,7 @@ class Header extends React.Component {
       <header style={style}>
         <Nav movieOpend={movieOpend}/>
         {headerBody}
-        <HeaderFooter movieOpend={movieOpend}/>
+        <HeaderFooter movieOpend={movieOpend} emptyResults = {emptyResults}/>
       </header>
     );
   }

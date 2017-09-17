@@ -11,14 +11,16 @@ class HeaderFooter extends React.Component {
   render() {
     const style = {
       width: '100%',
+      minHeight: '50px',
       backgroundColor: '#ccc'
     };
-    const movieOpend = this.props.movieOpend;
+    let movieOpend = this.props.movieOpend;
+    let emptyResults = this.props.emptyResults;
 
     let headerFooterBody = null;
     if (movieOpend) {
       headerFooterBody = <MovieInfo />;
-    } else {
+    } else if (!emptyResults) {
       headerFooterBody = <SearchNav />;
     }
 
