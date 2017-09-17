@@ -27,7 +27,7 @@ const config = {
     extensions: ['.js', '.jsx']
   },
   devServer: {
-    contentBase: './src',
+    contentBase: APP_DIR,
     hot: true
   },
   plugins: [

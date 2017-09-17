@@ -7,7 +7,7 @@
     "eslint": "eslint",
     "build": "webpack",
     "build:watch": "webpack -d --watch",
-    "serve": "webpack-dev-server --progress --colors --config ./webpack.config.js",
+    "serve": "webpack-dev-server --progress --hot --colors --config ./webpack.config.js",
     "start": "npm run serve",
     "build:prod": "webpack -p",
     "serve:prod": "node server/app.js",
