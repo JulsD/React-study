@@ -14,6 +14,9 @@ class SearchPage extends React.Component {
     return (
       <div style={style}>
         <Header />
+        <SearchNav />
+        <SearchResult movies={[1,2,3]}/>
+        <Footer />
       </div>
     );
   }
