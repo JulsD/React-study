@@ -7,8 +7,7 @@ class SearchNav extends React.Component {
   render() {
     const style = {
       width: '100%',
-      display: 'flex',
-      backgroundColor: '#ccc'
+      display: 'flex'
     };
     return (
       <nav style={style}>
