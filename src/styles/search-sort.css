@@ -1,0 +1,18 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.root label {
+  margin-left: 20px;
+  position: relative;
+  cursor: pointer;
+}
+.root label input {
+  visibility: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.active {
+  color: #f40612;
+}

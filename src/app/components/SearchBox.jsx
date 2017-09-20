@@ -1,5 +1,8 @@
 import React from 'react';
 
+import btn from './../../styles/buttons.css';
+import styles from './../../styles/search-box.css';
+
 class SearchBox extends React.Component {
 
   constructor(props) {
@@ -25,22 +28,20 @@ class SearchBox extends React.Component {
   }
 
   render() {
-    const style = {
-      width: '100%'
-    };
     return (
-        <form className="search-box">
+        <form className = {styles.root}>
           <label>
-            <h3>Find your movie</h3>
+            <h3 className = {styles.title}>Find your movie</h3>
             <input name="searchText"
+                   className = {styles.searchInput}
                    type="search"
                    placeholder="Search movie"
                    value={this.state.searchText}
                    onChange={this.handleInputChange}/>
           </ label>
-          <div className="search-switcher">
-            <h4>Search by</h4>
-            <label>
+          <div className = {styles.switcher}>
+            <h4 className = {styles.switcherTitle}>Search by</h4>
+            <label className={`${btn.btn} ${this.state.searchBy ==="title" ? btn.btnRed : btn.btnNotActive} ${styles.switcherBtn}`}>
               Title
               <input type="radio"
                      name="searchBy"
@@ -48,7 +49,7 @@ class SearchBox extends React.Component {
                      onChange={this.handleInputChange}
                      checked={this.state.searchBy ==="title"}/>
             </label>
-            <label>
+            <label className={`${btn.btn} ${this.state.searchBy ==="director" ? btn.btnRed : btn.btnNotActive} ${styles.switcherBtn}`}>
               Director
               <input type="radio"
                      name="searchBy"
@@ -57,7 +58,7 @@ class SearchBox extends React.Component {
                      checked={this.state.searchBy ==="director"} />
             </label>
           </div>
-          <button type="submit">Search</button>
+          <div className = {styles.submit}><button type="submit" className = {`${btn.btn} ${btn.btnRed}`}>Search</button></div>
         </form>
     );
   }

@@ -4,6 +4,9 @@ import SearchBox from './SearchBox';
 import MovieBox from './MovieBox';
 import HeaderFooter from './HeaderFooter';
 
+import common from './../../styles/common.css';
+import styles from './../../styles/header.css';
+
 class Header extends React.Component {
 
   constructor(props) {
@@ -21,14 +24,12 @@ class Header extends React.Component {
       headerBody = <SearchBox />;
     }
 
-    const style = {
-      width: '100%',
-      backgroundColor: 'yellow'
-    };
     return (
-      <header style={style}>
-        <Nav movieOpend={movieOpend}/>
-        {headerBody}
+      <header className = {styles.root}>
+        <div className = {common.wrapper}>
+          <Nav movieOpend={movieOpend}/>
+          {headerBody}
+        </div>
         <HeaderFooter movieOpend={movieOpend} emptyResults = {emptyResults}/>
       </header>
     );

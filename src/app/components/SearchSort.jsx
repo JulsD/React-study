@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from './../../styles/search-sort.css';
+
 class SearchSort extends React.Component {
 
   constructor(props) {
@@ -25,9 +27,9 @@ class SearchSort extends React.Component {
 
   render() {
     return (
-      <div className="search-sort">
+      <div className = {styles.root}>
         <h4>Sort by</h4>
-        <label>
+        <label className = {this.state.sortBy ==="release date" ? styles.active : ""}>
           release date
           <input type="radio"
                  name="sortBy"
@@ -35,7 +37,7 @@ class SearchSort extends React.Component {
                  onChange={this.handleInputChange}
                  checked={this.state.sortBy ==="release date"}/>
         </label>
-        <label>
+        <label className = {this.state.sortBy ==="rating" ? styles.active : ""}>
           rating
           <input type="radio"
                  name="sortBy"

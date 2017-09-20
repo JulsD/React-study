@@ -4,6 +4,8 @@ import Header from './components/Header';
 import SearchResult from './components/SearchResult';
 import Footer from './components/Footer';
 
+import common from './../styles/common.css';
+
 class SearchPage extends React.Component {
 
   constructor(props) {
@@ -14,12 +16,9 @@ class SearchPage extends React.Component {
 
   render() {
     const movieOpend = this.state.movieOpend;
-    const style = {
-      width: '100%'
-    };
-    const movies = [1,2,3];
+    const movies = [1,2,3,4,5];
     return (
-      <div style={style}>
+      <div className = {common.typo}>
         <Header movieOpend={movieOpend} emptyResults = {movies ? false : true}/>
         <SearchResult movies = {movies}/>
         <Footer />

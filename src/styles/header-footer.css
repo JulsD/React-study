@@ -1,0 +1,9 @@
+.root {
+  width: 100%;
+  min-height: 50px;
+  background-color: #f3f3f3;
+  color: black;
+  color: #666;
+  font-weight: 600;
+  font-size: 14px;
+}

@@ -1,0 +1,10 @@
+.wrapper {
+  padding: 15px 20px;
+  box-sizing: border-box;
+  max-width: 75rem;
+  width: 100%;
+  margin: 0 auto;
+}
+.typo {
+  font-family: monospace, sans-serif;
+}

@@ -2,15 +2,13 @@ import React from 'react';
 import SearchSum from './SearchSum';
 import SearchSort from './SearchSort';
 
+import styles from './../../styles/search-nav.css';
+
 class SearchNav extends React.Component {
 
   render() {
-    const style = {
-      width: '100%',
-      display: 'flex'
-    };
     return (
-      <nav style={style}>
+      <nav className = {styles.root}>
         <SearchSum />
         <SearchSort />
       </nav>

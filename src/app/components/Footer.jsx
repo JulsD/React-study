@@ -1,16 +1,17 @@
 import React from 'react';
 import Logo from './Logo';
 
+import common from './../../styles/common.css';
+import styles from './../../styles/footer.css';
+
 class Footer extends React.Component {
 
   render() {
-    const style = {
-      width: '100%',
-      backgroundColor: '#474747'
-    };
     return (
-      <footer style={style}>
-        <Logo />
+      <footer className = {styles.root}>
+        <div className = {common.wrapper}>
+          <Logo />
+        </div>
       </footer>
     );
   }

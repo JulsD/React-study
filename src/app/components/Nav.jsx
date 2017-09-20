@@ -2,6 +2,8 @@ import React from 'react';
 import Logo from './Logo';
 import NavMenu from './NavMenu';
 
+import styles from './../../styles/header-nav.css';
+
 class Nav extends React.Component {
 
   constructor(props) {
@@ -17,7 +19,7 @@ class Nav extends React.Component {
     }
     
     return (
-      <nav className="header-nav">
+      <nav className = {styles.root}>
         <Logo />
         {navBody}
       </nav>

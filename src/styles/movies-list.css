@@ -1,0 +1,8 @@
+.root {
+  display: flex;
+  flex-wrap: wrap;
+}
+.root > div {
+  flex: 0 1 33%;
+  box-sizing: border-box;
+}

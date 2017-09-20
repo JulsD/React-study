@@ -1,5 +1,8 @@
 import React from 'react';
 import MoviesList from './MoviesList';
+import EmptySearch from './EmptySearch';
+
+import common from './../../styles/common.css';
 
 class SearchResult extends React.Component {
 
@@ -15,11 +18,13 @@ class SearchResult extends React.Component {
     if (movies) {
       searchResultBody = <MoviesList movies={movies}/>;
     } else {
-      searchResultBody = 'No films found';
+      searchResultBody = <EmptySearch />;
     }
     return (
-      <div className="search-resuls">
-        {searchResultBody}
+      <div>
+        <div className = {common.wrapper}>
+          {searchResultBody}
+        </div>
       </div>
     );
   }

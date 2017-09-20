@@ -2,6 +2,9 @@ import React from 'react';
 import SearchNav from './SearchNav';
 import MovieInfo from './MovieInfo';
 
+import common from './../../styles/common.css';
+import styles from './../../styles/header-footer.css';
+
 class HeaderFooter extends React.Component {
 
   constructor(props) {
@@ -9,11 +12,6 @@ class HeaderFooter extends React.Component {
   }
 
   render() {
-    const style = {
-      width: '100%',
-      minHeight: '50px',
-      backgroundColor: '#ccc'
-    };
     let movieOpend = this.props.movieOpend;
     let emptyResults = this.props.emptyResults;
 
@@ -25,8 +23,10 @@ class HeaderFooter extends React.Component {
     }
 
     return (
-      <div style={style}>
-        {headerFooterBody}
+      <div className = {styles.root}>
+        <div className = {common.wrapper}>
+          {headerFooterBody}
+        </div>
       </div>
     );
   }
