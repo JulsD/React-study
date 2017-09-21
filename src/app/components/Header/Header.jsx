@@ -1,5 +1,5 @@
 import React from 'react';
-import Nav from './../Nav';
+import HeaderNav from './../HeaderNav/HeaderNav';
 import SearchBox from './../SearchBox';
 import MovieBox from './../MovieBox';
 import HeaderFooter from './../HeaderFooter/HeaderFooter';
@@ -27,7 +27,7 @@ class Header extends React.Component {
     return (
       <header className = {styles.root}>
         <div className = {common.wrapper}>
-          <Nav movieOpend={movieOpend}/>
+          <HeaderNav movieOpend={movieOpend}/>
           {headerBody}
         </div>
         <HeaderFooter movieOpend={movieOpend} emptyResults = {emptyResults}/>

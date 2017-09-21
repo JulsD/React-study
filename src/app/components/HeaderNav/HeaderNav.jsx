@@ -1,8 +1,8 @@
 import React from 'react';
-import Logo from './Logo/Logo';
-import NavMenu from './NavMenu';
+import Logo from './../Logo/Logo';
+import NavMenu from './../NavMenu';
 
-import styles from './../../styles/header-nav.css';
+import styles from './header-nav.css';
 
 class Nav extends React.Component {
 
