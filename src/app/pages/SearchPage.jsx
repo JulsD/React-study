@@ -42,9 +42,7 @@ class SearchPage extends React.Component {
         <SearchResult>
           {searchResultBody}
         </SearchResult>
-        <Footer>
-          <Logo />
-        </Footer>
+        <Footer />
       </div>
     );
   }

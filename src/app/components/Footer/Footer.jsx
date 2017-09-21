@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Logo from './../Logo';
+
 import common from './../../../styles/common.css';
 import styles from './footer.css';
 
@@ -12,6 +14,7 @@ class Footer extends React.Component {
     return (
       <footer className = {styles.root}>
         <div className = {common.wrapper}>
+          <Logo />
           {this.props.children}
         </div>
       </footer>

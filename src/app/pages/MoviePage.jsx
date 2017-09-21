@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { 
-  Logo, 
   Header, 
   Footer, 
   SearchResult, 
@@ -37,9 +36,7 @@ class MoviePage extends React.Component {
         <SearchResult>
           <MoviesList movies={movies}/>
         </SearchResult>
-        <Footer>
-          <Logo />
-        </Footer>
+        <Footer />
       </div>
     );
   }
