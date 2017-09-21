@@ -1,7 +1,7 @@
 import React from 'react';
 
-import btn from './../../styles/buttons.css';
-import styles from './../../styles/movie-item.css';
+import btn from './../../../styles/buttons.css';
+import styles from './movie-item.css';
 
 class MovieItem extends React.Component {
 

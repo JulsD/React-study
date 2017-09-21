@@ -1,5 +1,5 @@
 import React from 'react';
-import MovieItem from './MovieItem';
+import MovieItem from './MovieItem/MovieItem';
 
 import styles from './../../styles/movies-list.css';
 
