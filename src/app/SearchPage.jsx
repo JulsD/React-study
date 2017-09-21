@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Header from './components/Header/Header';
-import SearchResult from './components/SearchResult';
+import SearchResult from './components/SearchResult/SearchResult';
 import Footer from './components/Footer/Footer';
 
 import common from './../styles/common.css';

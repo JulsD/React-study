@@ -1,8 +1,8 @@
 import React from 'react';
-import MoviesList from './MoviesList/MoviesList';
-import EmptySearch from './EmptySearch/EmptySearch';
+import MoviesList from './../MoviesList/MoviesList';
+import EmptySearch from './../EmptySearch/EmptySearch';
 
-import common from './../../styles/common.css';
+import common from './../../../styles/common.css';
 
 class SearchResult extends React.Component {
 
