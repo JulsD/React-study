@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchSum from './../SearchSum';
+import SearchSum from './../SearchSum/SearchSum';
 import SearchSort from './../SearchSort/SearchSort';
 
 import styles from './search-nav.css';
