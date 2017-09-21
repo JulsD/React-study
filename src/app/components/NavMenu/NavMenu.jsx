@@ -1,7 +1,7 @@
 import React from 'react';
 
-import btn from './../../styles/buttons.css';
-import styles from './../../styles/nav-menu.css';
+import btn from './../../../styles/buttons.css';
+import styles from './nav-menu.css';
 
 class NavMenu extends React.Component {
 
