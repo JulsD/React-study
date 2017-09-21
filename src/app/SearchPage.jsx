@@ -2,7 +2,7 @@ import React from 'react';
 
 import Header from './components/Header';
 import SearchResult from './components/SearchResult';
-import Footer from './components/Footer';
+import Footer from './components/Footer/Footer';
 
 import common from './../styles/common.css';
 
