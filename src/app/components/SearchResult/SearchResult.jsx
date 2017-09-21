@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { MoviesList, EmptySearch } from './../';
 import common from './../../../styles/common.css';
 
 class SearchResult extends React.Component {
@@ -11,18 +10,10 @@ class SearchResult extends React.Component {
   }
 
   render() {
-    const movies = this.props.movies;
-
-    let searchResultBody = null;
-    if (movies) {
-      searchResultBody = <MoviesList movies={movies}/>;
-    } else {
-      searchResultBody = <EmptySearch />;
-    }
     return (
       <div>
         <div className = {common.wrapper}>
-          {searchResultBody}
+          {this.props.children}
         </div>
       </div>
     );

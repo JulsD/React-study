@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Logo, Header, Footer, SearchResult, HeaderNav, SearchBox, MovieBox, HeaderFooter, SearchNav, MovieInfo, NavMenu } from './components';
+import { Logo, Header, Footer, SearchResult, HeaderNav, SearchBox, MovieBox, HeaderFooter, SearchNav, MovieInfo, NavMenu, MoviesList, EmptySearch } from './components';
 import common from './../styles/common.css';
 
 class SearchPage extends React.Component {
@@ -14,7 +14,8 @@ class SearchPage extends React.Component {
     const movieOpend = this.state.movieOpend;
     const movies = [1,2,3,4,5];
     let emptyResults = movies ? false : true;
-    let headerBody;
+    
+    let headerBody = null;
     if (movieOpend) {
       headerBody = <MovieBox />
     } else {
@@ -30,6 +31,12 @@ class SearchPage extends React.Component {
     if (movieOpend) {
       navBody = <NavMenu menu={['Search']}/>;
     }
+    let searchResultBody = null;
+    if (movies) {
+      searchResultBody = <MoviesList movies={movies}/>;
+    } else {
+      searchResultBody = <EmptySearch />;
+    }
     return (
       <div className = {common.typo}>
         <Header>
@@ -41,7 +48,9 @@ class SearchPage extends React.Component {
         <HeaderFooter>
           {headerFooterBody}
         </HeaderFooter>
-        <SearchResult movies = {movies}/>
+        <SearchResult>
+          {searchResultBody}
+        </SearchResult>
         <Footer>
           <Logo />
         </Footer>
