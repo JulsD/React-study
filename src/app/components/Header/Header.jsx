@@ -1,11 +1,11 @@
 import React from 'react';
-import Nav from './Nav';
-import SearchBox from './SearchBox';
-import MovieBox from './MovieBox';
-import HeaderFooter from './HeaderFooter';
+import Nav from './../Nav';
+import SearchBox from './../SearchBox';
+import MovieBox from './../MovieBox';
+import HeaderFooter from './../HeaderFooter';
 
-import common from './../../styles/common.css';
-import styles from './../../styles/header.css';
+import common from './../../../styles/common.css';
+import styles from './header.css';
 
 class Header extends React.Component {
 
