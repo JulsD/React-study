@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './../../styles/movie-box.css';
+import styles from './movie-box.css';
 
 class MovieBox extends React.Component {
 

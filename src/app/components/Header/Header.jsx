@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderNav from './../HeaderNav/HeaderNav';
 import SearchBox from './../SearchBox';
-import MovieBox from './../MovieBox';
+import MovieBox from './../MovieBox/MovieBox';
 import HeaderFooter from './../HeaderFooter/HeaderFooter';
 
 import common from './../../../styles/common.css';
