@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchNav from './../SearchNav';
+import SearchNav from './../SearchNav/SearchNav';
 import MovieInfo from './../MovieInfo/MovieInfo';
 
 import common from './../../../styles/common.css';

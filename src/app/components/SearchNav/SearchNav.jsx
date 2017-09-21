@@ -1,8 +1,8 @@
 import React from 'react';
-import SearchSum from './SearchSum';
-import SearchSort from './SearchSort';
+import SearchSum from './../SearchSum';
+import SearchSort from './../SearchSort';
 
-import styles from './../../styles/search-nav.css';
+import styles from './search-nav.css';
 
 class SearchNav extends React.Component {
 
