@@ -1,7 +1,7 @@
 import React from 'react';
 import MovieItem from './MovieItem/MovieItem';
 
-import styles from './../../styles/movies-list.css';
+import styles from './movies-list.css';
 
 class MoviesList extends React.Component {
 

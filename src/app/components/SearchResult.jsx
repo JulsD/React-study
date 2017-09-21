@@ -1,5 +1,5 @@
 import React from 'react';
-import MoviesList from './MoviesList';
+import MoviesList from './MoviesList/MoviesList';
 import EmptySearch from './EmptySearch/EmptySearch';
 
 import common from './../../styles/common.css';
