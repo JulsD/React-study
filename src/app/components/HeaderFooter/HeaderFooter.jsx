@@ -1,5 +1,5 @@
 import React from 'react';
-import { SearchNav, MovieInfo } from './../';
+import {  } from './../';
 
 import common from './../../../styles/common.css';
 import styles from './header-footer.css';
@@ -11,20 +11,10 @@ class HeaderFooter extends React.Component {
   }
 
   render() {
-    let movieOpend = this.props.movieOpend;
-    let emptyResults = this.props.emptyResults;
-
-    let headerFooterBody = null;
-    if (movieOpend) {
-      headerFooterBody = <MovieInfo />;
-    } else if (!emptyResults) {
-      headerFooterBody = <SearchNav />;
-    }
-
     return (
       <div className = {styles.root}>
         <div className = {common.wrapper}>
-          {headerFooterBody}
+          {this.props.children}
         </div>
       </div>
     );
