@@ -1,6 +1,6 @@
 import React from 'react';
 import HeaderNav from './../HeaderNav/HeaderNav';
-import SearchBox from './../SearchBox';
+import SearchBox from './../SearchBox/SearchBox';
 import MovieBox from './../MovieBox/MovieBox';
 import HeaderFooter from './../HeaderFooter/HeaderFooter';
 

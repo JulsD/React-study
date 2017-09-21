@@ -1,7 +1,7 @@
 import React from 'react';
 
-import btn from './../../styles/buttons.css';
-import styles from './../../styles/search-box.css';
+import btn from './../../../styles/buttons.css';
+import styles from './search-box.css';
 
 class SearchBox extends React.Component {
 
