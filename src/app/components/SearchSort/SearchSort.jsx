@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './../../styles/search-sort.css';
+import styles from './search-sort.css';
 
 class SearchSort extends React.Component {
 
