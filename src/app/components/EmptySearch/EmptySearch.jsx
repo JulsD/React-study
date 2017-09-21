@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './../../styles/empty-search.css';
+import styles from './empty-search.css';
 
 class Footer extends React.Component {
 
