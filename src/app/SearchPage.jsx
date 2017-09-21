@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Header, Footer, SearchResult} from './components';
+import { Logo, Header, Footer, SearchResult} from './components';
 import common from './../styles/common.css';
 
 class SearchPage extends React.Component {
@@ -18,7 +18,9 @@ class SearchPage extends React.Component {
       <div className = {common.typo}>
         <Header movieOpend={movieOpend} emptyResults = {movies ? false : true}/>
         <SearchResult movies = {movies}/>
-        <Footer />
+        <Footer>
+          <Logo />
+        </Footer>
       </div>
     );
   }
