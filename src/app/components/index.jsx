@@ -1,16 +1,35 @@
-export {default as EmptySearch} from './EmptySearch';
-export {default as Footer} from './Footer';
-export {default as Header} from './Header';
-export {default as HeaderFooter} from './HeaderFooter';
-export {default as HeaderNav} from './HeaderNav';
-export {default as Logo} from './Logo';
-export {default as MovieBox} from './MovieBox';
-export {default as MovieInfo} from './MovieInfo';
-export {default as MovieItem} from './MovieItem';
-export {default as MoviesList} from './MoviesList';
-export {default as NavMenu} from './NavMenu';
-export {default as SearchBox} from './SearchBox';
-export {default as SearchNav} from './SearchNav';
-export {default as SearchResult} from './SearchResult';
-export {default as SearchSort} from './SearchSort';
-export {default as SearchSum} from './SearchSum';
+import {default as EmptySearch} from './EmptySearch';
+import {default as Footer} from './Footer';
+import {default as Header} from './Header';
+import {default as HeaderFooter} from './HeaderFooter';
+import {default as HeaderNav} from './HeaderNav';
+import {default as Logo} from './Logo';
+import {default as MovieBox} from './MovieBox';
+import {default as MovieInfo} from './MovieInfo';
+import {default as MovieItem} from './MovieItem';
+import {default as MoviesList} from './MoviesList';
+import {default as NavMenu} from './NavMenu';
+import {default as SearchBox} from './SearchBox';
+import {default as SearchNav} from './SearchNav';
+import {default as SearchResult} from './SearchResult';
+import {default as SearchSort} from './SearchSort';
+import {default as SearchSum} from './SearchSum';
+
+export {
+  EmptySearch,
+  Footer,
+  Header,
+  HeaderFooter,
+  HeaderNav,
+  Logo,
+  MovieBox,
+  MovieInfo,
+  MovieItem,
+  MoviesList,
+  NavMenu,
+  SearchBox,
+  SearchNav,
+  SearchResult,
+  SearchSort,
+  SearchSum
+}

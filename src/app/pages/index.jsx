@@ -1,2 +1,7 @@
-export {default as MoviePage} from './MoviePage';
-export {default as SearchPage} from './SearchPage';
+import {default as MoviePage} from './MoviePage';
+import {default as SearchPage} from './SearchPage';
+
+export {
+  MoviePage,
+  SearchPage
+}
