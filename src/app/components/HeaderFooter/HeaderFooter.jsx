@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchNav from './../SearchNav';
-import MovieInfo from './../MovieInfo';
+import MovieInfo from './../MovieInfo/MovieInfo';
 
 import common from './../../../styles/common.css';
 import styles from './header-footer.css';
