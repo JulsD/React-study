@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Logo, Header, Footer, SearchResult, HeaderNav, SearchBox, MovieBox, HeaderFooter, SearchNav, MovieInfo } from './components';
+import { Logo, Header, Footer, SearchResult, HeaderNav, SearchBox, MovieBox, HeaderFooter, SearchNav, MovieInfo, NavMenu } from './components';
 import common from './../styles/common.css';
 
 class SearchPage extends React.Component {
@@ -26,10 +26,16 @@ class SearchPage extends React.Component {
     } else if (!emptyResults) {
       headerFooterBody = <SearchNav />;
     }
+    let navBody = null;
+    if (movieOpend) {
+      navBody = <NavMenu menu={['Search']}/>;
+    }
     return (
       <div className = {common.typo}>
-        <Header movieOpend={movieOpend} emptyResults = {emptyResults}>
-          <HeaderNav movieOpend={movieOpend}/>
+        <Header>
+          <HeaderNav>
+            {navBody}
+          </HeaderNav>
           {headerBody}
         </Header>
         <HeaderFooter>
