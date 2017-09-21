@@ -40,7 +40,7 @@ const config = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.css']
+    extensions: ['.js', '.jsx']
   },
   devServer: {
     contentBase: SRC_DIR,
