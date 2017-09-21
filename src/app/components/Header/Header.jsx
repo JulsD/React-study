@@ -2,7 +2,7 @@ import React from 'react';
 import Nav from './../Nav';
 import SearchBox from './../SearchBox';
 import MovieBox from './../MovieBox';
-import HeaderFooter from './../HeaderFooter';
+import HeaderFooter from './../HeaderFooter/HeaderFooter';
 
 import common from './../../../styles/common.css';
 import styles from './header.css';

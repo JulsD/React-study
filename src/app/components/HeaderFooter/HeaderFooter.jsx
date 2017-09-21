@@ -1,9 +1,9 @@
 import React from 'react';
-import SearchNav from './SearchNav';
-import MovieInfo from './MovieInfo';
+import SearchNav from './../SearchNav';
+import MovieInfo from './../MovieInfo';
 
-import common from './../../styles/common.css';
-import styles from './../../styles/header-footer.css';
+import common from './../../../styles/common.css';
+import styles from './header-footer.css';
 
 class HeaderFooter extends React.Component {
 
