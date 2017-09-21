@@ -1,5 +1,4 @@
 import React from 'react';
-import {  } from './../';
 
 import common from './../../../styles/common.css';
 import styles from './header-footer.css';
