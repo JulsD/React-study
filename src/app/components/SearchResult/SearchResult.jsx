@@ -1,7 +1,6 @@
 import React from 'react';
-import MoviesList from './../MoviesList/MoviesList';
-import EmptySearch from './../EmptySearch/EmptySearch';
 
+import { MoviesList, EmptySearch } from './../';
 import common from './../../../styles/common.css';
 
 class SearchResult extends React.Component {

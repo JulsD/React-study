@@ -1,6 +1,6 @@
 import React from 'react';
-import Logo from './../Logo/Logo';
 
+import { Logo } from './../';
 import common from './../../../styles/common.css';
 import styles from './footer.css';
 

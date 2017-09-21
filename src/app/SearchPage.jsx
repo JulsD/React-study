@@ -1,9 +1,6 @@
 import React from 'react';
 
-import Header from './components/Header/Header';
-import SearchResult from './components/SearchResult/SearchResult';
-import Footer from './components/Footer/Footer';
-
+import {Header, Footer, SearchResult} from './components';
 import common from './../styles/common.css';
 
 class SearchPage extends React.Component {

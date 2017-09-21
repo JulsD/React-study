@@ -1,9 +1,6 @@
 import React from 'react';
-import HeaderNav from './../HeaderNav/HeaderNav';
-import SearchBox from './../SearchBox/SearchBox';
-import MovieBox from './../MovieBox/MovieBox';
-import HeaderFooter from './../HeaderFooter/HeaderFooter';
 
+import { HeaderNav, SearchBox, MovieBox, HeaderFooter } from './../';
 import common from './../../../styles/common.css';
 import styles from './header.css';
 
