@@ -44,7 +44,8 @@ const config = {
   },
   devServer: {
     contentBase: SRC_DIR,
-    hot: true
+    hot: true,
+    historyApiFallback: true
   },
   plugins: [
     new HtmlWebpackPlugin({
