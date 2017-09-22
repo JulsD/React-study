@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
+
 
 import btn from './../../../styles/buttons.css';
 import styles from './nav-menu.css';
@@ -14,7 +16,7 @@ class NavMenu extends React.Component {
     const menu = this.props.menu;
     const menuList = menu.map((menuItem) =>
       <li key={menuItem.toString()}>
-        <a href="#search" className= {`${btn.btn} ${btn.btnGray}`}>{menuItem}</a>
+        <Link to='/' className= {`${btn.btn} ${btn.btnGray}`}>{menuItem}</Link>
       </li>
     );
     return (
