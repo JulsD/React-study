@@ -1,10 +1,12 @@
 import React from 'react';
-import { render } from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import { SearchPage, MoviePage } from './pages';
 
+import '../styles/common.css';
+
 class App extends React.Component {
+  
   render () {
     return (
       <div>
@@ -17,8 +19,6 @@ class App extends React.Component {
   }
 }
 
-render((
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-), document.getElementById('app'));
+export default App;
+
+

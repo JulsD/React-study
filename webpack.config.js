@@ -5,12 +5,11 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const BUILD_DIR = path.resolve(__dirname, 'dist');
 const SRC_DIR = path.resolve(__dirname, 'src');
-const APP_DIR = path.join(SRC_DIR, 'app');
 
 const isProd = (process.argv.indexOf('-p') !== -1);
 
 const config = {
-  entry: path.join(APP_DIR, 'index.jsx'),
+  entry: path.join(SRC_DIR, 'app.jsx'),
   output: {
     path: BUILD_DIR,
     filename: 'bundle.js'
@@ -19,7 +18,7 @@ const config = {
     rules : [
       {
         test : /\.jsx?/,
-        include : APP_DIR,
+        include : SRC_DIR,
         loader: ['react-hot-loader', 'babel-loader']
       },
       {
