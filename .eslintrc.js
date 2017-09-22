@@ -26,6 +26,7 @@ module.exports = {
   },
   "rules": {
     "jsx-quotes": [2, "prefer-single"],
+    "react/prop-types": 0
   },
   "plugins": [
     "react",
