@@ -1,8 +1,8 @@
 import React from 'react';
 
 import Logo from './../Logo';
+import Wrapper from './../Wrapper';
 
-import common from './../../../styles/common.css';
 import styles from './footer.css';
 
 class Footer extends React.Component {
@@ -13,10 +13,10 @@ class Footer extends React.Component {
   render() {
     return (
       <footer className = {styles.root}>
-        <div className = {common.wrapper}>
+        <Wrapper>
           <Logo />
           {this.props.children}
-        </div>
+        </Wrapper>
       </footer>
     );
   }

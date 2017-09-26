@@ -1,6 +1,6 @@
 import React from 'react';
 
-import common from './../../../styles/common.css';
+import Wrapper from './../Wrapper';
 
 class SearchResult extends React.Component {
 
@@ -12,9 +12,9 @@ class SearchResult extends React.Component {
   render() {
     return (
       <div>
-        <div className = {common.wrapper}>
+        <Wrapper>
           {this.props.children}
-        </div>
+        </Wrapper>
       </div>
     );
   }

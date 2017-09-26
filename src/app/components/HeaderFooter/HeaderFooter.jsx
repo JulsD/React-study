@@ -1,6 +1,6 @@
 import React from 'react';
 
-import common from './../../../styles/common.css';
+import Wrapper from './../Wrapper';
 import styles from './header-footer.css';
 
 class HeaderFooter extends React.Component {
@@ -12,9 +12,9 @@ class HeaderFooter extends React.Component {
   render() {
     return (
       <div className = {styles.root}>
-        <div className = {common.wrapper}>
+        <Wrapper>
           {this.props.children}
-        </div>
+        </Wrapper>
       </div>
     );
   }
