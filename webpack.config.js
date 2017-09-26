@@ -21,7 +21,11 @@ const config = {
         test: /\.jsx?$/,
         loader: 'eslint-loader',
         exclude: /node_modules/,
-        enforce: 'pre'
+        enforce: 'pre',
+        options: {
+          failOnWarning: false,
+          failOnError: true
+        }
       },
       {
         test : /\.jsx?/,
