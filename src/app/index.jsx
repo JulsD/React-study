@@ -11,8 +11,8 @@ class App extends React.Component {
     return (
       <div>
         <Switch>
-          <Route exact path='/' component={SearchPage}/>
           <Route path='/movie' component={MoviePage}/>
+          <Route path='/' component={SearchPage}/>
         </Switch>
       </div>
     );

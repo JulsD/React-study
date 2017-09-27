@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 
 import { 
   Header, 
@@ -20,15 +21,6 @@ class SearchPage extends React.Component {
   }
 
   render() {
-    const movies = [1,2,3,4,5];
-    
-    let searchResultBody = null;
-    if (movies) {
-      searchResultBody = <MoviesList movies={movies}/>;
-    } else {
-      searchResultBody = <EmptySearch />;
-    }
-    
     return (
       <div className = {common.typo}>
         <Header>
@@ -39,7 +31,10 @@ class SearchPage extends React.Component {
           <SearchNav />
         </HeaderFooter>
         <SearchResult>
-          {searchResultBody}
+          <Switch>
+            <Route exact path='/' component={EmptySearch}/>
+            <Route path='/Search' component={MoviesList}/>
+          </Switch>
         </SearchResult>
         <Footer />
       </div>

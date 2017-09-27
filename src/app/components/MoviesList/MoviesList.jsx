@@ -11,7 +11,7 @@ class MoviesList extends React.Component {
   }
 
   render() {
-    const movies = this.props.movies;
+    const movies = [1,2,3,4,5];
     const listMovies = movies.map((movie) =>
       <MovieItem key={movie.toString()} title={movie} />
     );

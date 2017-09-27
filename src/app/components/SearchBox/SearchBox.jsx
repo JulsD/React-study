@@ -20,8 +20,6 @@ class SearchBox extends React.Component {
     const value = target.value;
     const name = target.name;
 
-    console.log(name + ':' + value);
-
     this.setState({
       [name]: value
     });
@@ -32,33 +30,33 @@ class SearchBox extends React.Component {
         <form className = {styles.root}>
           <label>
             <h3 className = {styles.title}>Find your movie</h3>
-            <input name="searchText"
+            <input name='searchText'
                    className = {styles.searchInput}
-                   type="search"
-                   placeholder="Search movie"
+                   type='search'
+                   placeholder='Search movie'
                    value={this.state.searchText}
                    onChange={this.handleInputChange}/>
           </ label>
           <div className = {styles.switcher}>
             <h4 className = {styles.switcherTitle}>Search by</h4>
-            <label className={`${btn.btn} ${this.state.searchBy ==="title" ? btn.btnRed : btn.btnNotActive} ${styles.switcherBtn}`}>
+            <label className={`${btn.btn} ${this.state.searchBy ==='title' ? btn.btnRed : btn.btnNotActive} ${styles.switcherBtn}`}>
               Title
-              <input type="radio"
-                     name="searchBy"
-                     value="title"
+              <input type='radio'
+                     name='searchBy'
+                     value='title'
                      onChange={this.handleInputChange}
-                     checked={this.state.searchBy ==="title"}/>
+                     checked={this.state.searchBy ==='title'}/>
             </label>
-            <label className={`${btn.btn} ${this.state.searchBy ==="director" ? btn.btnRed : btn.btnNotActive} ${styles.switcherBtn}`}>
+            <label className={`${btn.btn} ${this.state.searchBy ==='director' ? btn.btnRed : btn.btnNotActive} ${styles.switcherBtn}`}>
               Director
-              <input type="radio"
-                     name="searchBy"
-                     value="director"
+              <input type='radio'
+                     name='searchBy'
+                     value='director'
                      onChange={this.handleInputChange}
-                     checked={this.state.searchBy ==="director"} />
+                     checked={this.state.searchBy ==='director'} />
             </label>
           </div>
-          <div className = {styles.submit}><button type="submit" className = {`${btn.btn} ${btn.btnRed}`}>Search</button></div>
+          <div className = {styles.submit}><button type='submit' className = {`${btn.btn} ${btn.btnRed}`}>Search</button></div>
         </form>
     );
   }

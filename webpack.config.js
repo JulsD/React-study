@@ -17,6 +17,16 @@ const config = {
   module : {
     rules : [
       {
+        test: /\.jsx?$/,
+        loader: 'eslint-loader',
+        exclude: /node_modules/,
+        enforce: 'pre',
+        options: {
+          failOnWarning: false,
+          failOnError: true
+        }
+      },
+      {
         test : /\.jsx?/,
         include : SRC_DIR,
         loader: ['react-hot-loader', 'babel-loader']
