@@ -11,8 +11,9 @@ class MovieItem extends React.Component {
   }
 
   render() {
+    const linkTo = `/movie/${this.props.movie.id}`;
     return (
-      <Link to='/movie'>
+      <Link to={linkTo}>
         <div className = {styles.root}>
           <div className= {styles.cover}></div>
           <div className= {styles.details}>
