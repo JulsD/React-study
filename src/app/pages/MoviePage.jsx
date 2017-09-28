@@ -8,8 +8,7 @@ import {
   MovieBox, 
   HeaderFooter, 
   MovieInfo, 
-  NavMenu,
-  MoviesList, 
+  NavMenu
 } from './../components';
 import common from './../../styles/common.css';
 
@@ -20,8 +19,6 @@ class MoviePage extends React.Component {
   }
 
   render() {
-    const movies = [1,2,3,4,5];
-
     return (
       <div className = {common.typo}>
         <Header>
@@ -33,9 +30,7 @@ class MoviePage extends React.Component {
         <HeaderFooter>
           <MovieInfo />
         </HeaderFooter>
-        <SearchResult>
-          <MoviesList movies={movies}/>
-        </SearchResult>
+        <SearchResult />
         <Footer />
       </div>
     );

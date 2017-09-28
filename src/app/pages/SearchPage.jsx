@@ -1,5 +1,4 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
 
 import { 
   Header, 
@@ -8,9 +7,7 @@ import {
   HeaderNav, 
   SearchBox, 
   HeaderFooter, 
-  SearchNav, 
-  MoviesList, 
-  EmptySearch 
+  SearchNav
 } from './../components';
 import common from './../../styles/common.css';
 
@@ -30,12 +27,7 @@ class SearchPage extends React.Component {
         <HeaderFooter>
           <SearchNav />
         </HeaderFooter>
-        <SearchResult>
-          <Switch>
-            <Route exact path='/' component={EmptySearch}/>
-            <Route path='/Search' component={MoviesList}/>
-          </Switch>
-        </SearchResult>
+        <SearchResult />
         <Footer />
       </div>
     );
