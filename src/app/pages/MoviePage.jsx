@@ -8,9 +8,12 @@ import {
   MovieBox, 
   HeaderFooter, 
   MovieInfo, 
-  NavMenu
+  NavMenu,
+  MoviesList
 } from './../components';
 import common from './../../styles/common.css';
+
+// import DB from '../mockdb.js';
 
 class MoviePage extends React.Component {
 
@@ -19,6 +22,13 @@ class MoviePage extends React.Component {
   }
 
   render() {
+    const movies = [1,2,3,4,5];
+    
+    let searchResultBody = null;
+    if (movies) {
+      searchResultBody = <MoviesList movies={movies}/>;
+    } 
+
     return (
       <div className = {common.typo}>
         <Header>
@@ -30,7 +40,9 @@ class MoviePage extends React.Component {
         <HeaderFooter>
           <MovieInfo />
         </HeaderFooter>
-        <SearchResult />
+        <SearchResult>
+          {searchResultBody}
+        </SearchResult>
         <Footer />
       </div>
     );

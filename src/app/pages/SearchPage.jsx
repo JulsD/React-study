@@ -18,6 +18,13 @@ class SearchPage extends React.Component {
   }
 
   render() {
+    const movies = [];
+    let searchResultBody = null;
+    if (movies) {
+      searchResultBody = <MoviesList movies={movies}/>;
+    } else {
+     searchResultBody = <EmptySearch />;
+    }
     return (
       <div className = {common.typo}>
         <Header>
@@ -27,7 +34,9 @@ class SearchPage extends React.Component {
         <HeaderFooter>
           <SearchNav />
         </HeaderFooter>
-        <SearchResult />
+        <SearchResult>
+          {searchResultBody}
+        </SearchResult>
         <Footer />
       </div>
     );
