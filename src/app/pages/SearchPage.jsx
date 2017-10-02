@@ -9,7 +9,8 @@ import {
   HeaderFooter, 
   SearchNav
 } from './../components';
-import common from './../../styles/common.css';
+
+// import DB from 'db.json';
 
 class SearchPage extends React.Component {
 
@@ -26,7 +27,7 @@ class SearchPage extends React.Component {
      searchResultBody = <EmptySearch />;
     }
     return (
-      <div className = {common.typo}>
+      <div>
         <Header>
           <HeaderNav />
           <SearchBox />

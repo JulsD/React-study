@@ -11,7 +11,6 @@ import {
   NavMenu,
   MoviesList
 } from './../components';
-import common from './../../styles/common.css';
 
 // import DB from '../mockdb.js';
 
@@ -30,7 +29,7 @@ class MoviePage extends React.Component {
     } 
 
     return (
-      <div className = {common.typo}>
+      <div>
         <Header>
           <HeaderNav>
             <NavMenu menu={['Search']}/>
