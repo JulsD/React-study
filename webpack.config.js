@@ -9,7 +9,13 @@ const SRC_DIR = path.resolve(__dirname, 'src');
 const isProd = (process.argv.indexOf('-p') !== -1);
 
 const config = {
-  entry: path.join(SRC_DIR, 'app.jsx'),
+  entry: {
+  'app': [
+      'babel-polyfill',
+      'react-hot-loader/patch',
+      path.join(SRC_DIR, 'app.jsx')
+    ]
+  },
   output: {
     path: BUILD_DIR,
     filename: 'bundle.js',
@@ -30,7 +36,7 @@ const config = {
       {
         test : /\.jsx?/,
         include : SRC_DIR,
-        loader: ['react-hot-loader', 'babel-loader']
+        loader: ['babel-loader']
       },
       {
         test: /\.css$/,
