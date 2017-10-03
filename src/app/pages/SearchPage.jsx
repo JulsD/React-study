@@ -7,7 +7,9 @@ import {
   HeaderNav, 
   SearchBox, 
   HeaderFooter, 
-  SearchNav
+  SearchNav,
+  MoviesList, 
+  EmptySearch
 } from './../components';
 
 // import DB from 'db.json';
