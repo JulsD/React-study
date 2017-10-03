@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-import btn from './../../../styles/buttons.css';
+import Button from '../Button'
 import styles from './movie-item.css';
 
 class MovieItem extends React.Component {
@@ -11,14 +11,14 @@ class MovieItem extends React.Component {
   }
 
   render() {
-    const linkTo = `/movie/${this.props.movie.id}`;
+    const linkTo = `/movie/:title`;
     return (
       <Link to={linkTo}>
         <div className = {styles.root}>
           <div className= {styles.cover}></div>
           <div className= {styles.details}>
             <div className= {styles.title}>{this.props.title} Title</div>
-            <div className= {`${styles.date} ${btn.btn}`}>1990</div>
+            <Button kind='informative'>1990</Button>
             <div className={styles.genre}>genre</div>
           </div>
         </div>

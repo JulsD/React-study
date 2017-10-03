@@ -35,10 +35,6 @@
   font-size: 15px;
   flex: 1 1 60%;
 }
-.date {
-  padding: 3px;
-  border: 1px solid black;
-}
 .genre {
   font-size: 11px;
   color: #666;

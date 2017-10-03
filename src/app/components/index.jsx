@@ -15,6 +15,7 @@ import {default as SearchResult} from './SearchResult';
 import {default as SearchSort} from './SearchSort';
 import {default as SearchSum} from './SearchSum';
 import {default as Wrapper} from './Wrapper';
+import {default as Button} from './Button';
 
 export {
   EmptySearch,
@@ -33,5 +34,6 @@ export {
   SearchResult,
   SearchSort,
   SearchSum,
-  Wrapper
+  Wrapper,
+  Button
 }

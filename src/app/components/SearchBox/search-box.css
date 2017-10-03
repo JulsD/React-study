@@ -28,13 +28,13 @@
   vertical-align: middle;
   font-weight: 500;
 }
-.switcherBtn {
+.switcher label {
   display: inline-block;
   vertical-align: middle;
   margin-left: 10px;
   position: relative;
 }
-.switcherBtn input {
+.switcher label input {
   visibility: hidden;
   position: absolute;
   z-index: -1;

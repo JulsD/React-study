@@ -9,15 +9,19 @@
   border-radius: 2px;
   cursor: pointer;
 }
-.btnRed {
+.primary {
   background-color: #f40612;
   color: #fff;
 }
-.btnGray {
+.default {
   background-color: #f3f3f3;
   color: #f40612;
 }
-.btnNotActive {
+.informative {
+  padding: 3px;
+  border: 1px solid black;
+}
+.not-active {
   background-color: #f3f3f3;
   color: #666;
 }

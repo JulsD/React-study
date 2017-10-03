@@ -1,6 +1,6 @@
 import React from 'react';
 
-import btn from './../../../styles/buttons.css';
+import Button from '../Button';
 import styles from './search-box.css';
 
 class SearchBox extends React.Component {
@@ -39,24 +39,26 @@ class SearchBox extends React.Component {
           </ label>
           <div className = {styles.switcher}>
             <h4 className = {styles.switcherTitle}>Search by</h4>
-            <label className={`${btn.btn} ${this.state.searchBy ==='title' ? btn.btnRed : btn.btnNotActive} ${styles.switcherBtn}`}>
+            <Button type='label' kind={`${this.state.searchBy ==='title' ? 'primary' : 'not-active'}`} className={styles.switcherBtn}>
               Title
               <input type='radio'
                      name='searchBy'
                      value='title'
                      onChange={this.handleInputChange}
                      checked={this.state.searchBy ==='title'}/>
-            </label>
-            <label className={`${btn.btn} ${this.state.searchBy ==='director' ? btn.btnRed : btn.btnNotActive} ${styles.switcherBtn}`}>
+            </Button>
+            <Button type='label' kind={`${this.state.searchBy ==='director' ? 'primary' : 'not-active'}`} className={styles.switcherBtn}>
               Director
               <input type='radio'
                      name='searchBy'
                      value='director'
                      onChange={this.handleInputChange}
                      checked={this.state.searchBy ==='director'} />
-            </label>
+            </Button>
           </div>
-          <div className = {styles.submit}><button type='submit' className = {`${btn.btn} ${btn.btnRed}`}>Search</button></div>
+          <div className = {styles.submit}>
+            <Button type='submit' kind='primary'>Search</Button>
+          </div>
         </form>
     );
   }
