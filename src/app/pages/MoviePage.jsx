@@ -42,7 +42,7 @@ class MoviePage extends React.Component {
           <MovieBox movie={movie}/>
         </Header>
         <HeaderFooter>
-          <MovieInfo />
+          <MovieInfo movieInfo={movieDirector}/>
         </HeaderFooter>
         <SearchResult>
           {searchResultBody}

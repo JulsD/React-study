@@ -2,10 +2,14 @@ import React from 'react';
 
 class MovieInfo extends React.Component {
 
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
-      <div className='movie-info'>
-        {'movie information'}
+      <div>
+        {`Films by ${this.props.movieInfo}`}
       </div>
     );
   }
