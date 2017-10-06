@@ -12,7 +12,7 @@ import {
   MoviesList
 } from './../components';
 
-// import DB from '../mockdb.js';
+import DB from '../../../mock-db/db.json';
 
 class MoviePage extends React.Component {
 
@@ -21,8 +21,7 @@ class MoviePage extends React.Component {
   }
 
   render() {
-    const movies = [1,2,3,4,5];
-    
+    const movies = DB;
     let searchResultBody = null;
     if (movies) {
       searchResultBody = <MoviesList movies={movies}/>;

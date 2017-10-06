@@ -12,7 +12,7 @@ import {
   EmptySearch
 } from './../components';
 
-// import DB from 'db.json';
+import DB from '../../../mock-db/db.json';
 
 class SearchPage extends React.Component {
 
@@ -21,7 +21,7 @@ class SearchPage extends React.Component {
   }
 
   render() {
-    const movies = [];
+    const movies = DB || null;
     let searchResultBody = null;
     if (movies) {
       searchResultBody = <MoviesList movies={movies}/>;

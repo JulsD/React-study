@@ -11,9 +11,9 @@ class MoviesList extends React.Component {
   }
 
   render() {
-    const movies = [1,2,3,4,5];
+    let movies = this.props.movies || null;
     const listMovies = movies.map((movie) =>
-      <MovieItem key={movie.toString()} title={movie} />
+      <MovieItem key={movie.show_id.toString()} movie={movie} />
     );
     return (
       <div className = {styles.root}>

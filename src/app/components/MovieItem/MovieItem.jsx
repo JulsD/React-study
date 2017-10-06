@@ -15,11 +15,13 @@ class MovieItem extends React.Component {
     return (
       <Link to={linkTo}>
         <div className = {styles.root}>
-          <div className= {styles.cover}></div>
+          <div className= {styles.cover}>
+            <div style={{backgroundImage: 'url(' + movie.poster + ')'}}></div>
+          </div>
           <div className= {styles.details}>
-            <div className= {styles.title}>{this.props.title} Title</div>
-            <Button kind='informative'>1990</Button>
-            <div className={styles.genre}>genre</div>
+            <div className= {styles.title}>{movie.show_title} Title</div>
+            <Button kind='informative'>{movie.release_year}</Button>
+            <div className={styles.genre}>{movie.category}</div>
           </div>
         </div>
       </Link>

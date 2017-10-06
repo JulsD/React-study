@@ -10,14 +10,13 @@
   width: 100%;
   padding-top: 130%;
 }
-.cover:before {
+.cover div {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/dc18d1c3-9e06-41a4-a5b0-409388e3f9e8/df3756f5-3cf4-44b5-b51c-cdfcac3810dc/PL-en-20170911-popsignuptwoweeks-perspective_alpha_website_small.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
