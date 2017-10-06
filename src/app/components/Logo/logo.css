@@ -3,3 +3,8 @@
   font-weight: bold;
   cursor: pointer;
 }
+.root a {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
