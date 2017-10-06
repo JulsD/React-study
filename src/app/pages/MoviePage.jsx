@@ -1,13 +1,15 @@
 import React from 'react';
+import find from 'lodash/find';
+import filter from 'lodash/filter';
 
-import { 
-  Header, 
-  Footer, 
-  SearchResult, 
-  HeaderNav, 
-  MovieBox, 
-  HeaderFooter, 
-  MovieInfo, 
+import {
+  Header,
+  Footer,
+  SearchResult,
+  HeaderNav,
+  MovieBox,
+  HeaderFooter,
+  MovieInfo,
   NavMenu,
   MoviesList
 } from './../components';
@@ -21,11 +23,15 @@ class MoviePage extends React.Component {
   }
 
   render() {
-    const movies = DB;
+    let movieTitle = this.props.match.params.title;
+    let movies = DB;
+    let movie = find(movies, {'show_title':movieTitle});
+    let movieDirector = movie.director;
+    let moviesByDir = filter(movies, {'director':movieDirector})
     let searchResultBody = null;
     if (movies) {
-      searchResultBody = <MoviesList movies={movies}/>;
-    } 
+      searchResultBody = <MoviesList movies={moviesByDir}/>;
+    }
 
     return (
       <div>
@@ -33,7 +39,7 @@ class MoviePage extends React.Component {
           <HeaderNav>
             <NavMenu menu={['Search']}/>
           </HeaderNav>
-          <MovieBox movie={movies[0]}/>
+          <MovieBox movie={movie}/>
         </Header>
         <HeaderFooter>
           <MovieInfo />

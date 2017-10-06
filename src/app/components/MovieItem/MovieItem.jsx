@@ -12,7 +12,7 @@ class MovieItem extends React.Component {
 
   render() {
     let movie = this.props.movie;
-    const linkTo = `/movie/:title=${movie.show_title}`;
+    const linkTo = `/movie/${movie.show_title}`;
     return (
       <Link to={linkTo}>
         <div className = {styles.root}>
