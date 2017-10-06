@@ -10,29 +10,32 @@ class MovieBox extends React.Component {
   }
 
   render() {
+    let movie = this.props.movie;
     return (
       <div className = {styles.root}>
         <div className = {styles.coverWrapper}>
-          <div className = {styles.cover}></div>
+          <div className = {styles.cover}>
+            <div style={{backgroundImage: 'url(' + movie.poster + ')'}}></div>
+          </div>
         </div>
         <div className = {styles.details}>
           <div className = {styles.row}>
             <h2 className = {styles.title}>
-              Lorem Ipsum
+              {movie.show_title}
             </h2>
             <div className = {styles.rate}>
-              <span>4.1</span>
+              <span>{movie.rating}</span>
             </div>
-            <p className = {styles.genre}>Lorem Ipsum is simply</p>
-            <div className = {styles.numb}>1990</div>
-            <div className = {styles.numb}>{154} min</div>
+            <p className = {styles.genre}>{movie.category}</p>
+            <div className = {styles.numb}>{movie.release_year}</div>
+            <div className = {styles.numb}>{movie.runtime}</div>
           </div>
           <div className = {styles.row}>
-            <p className = {styles.description}>Lorem Ipsum is simply dummy text</p>
+            <p className = {styles.description}>{movie.summary}</p>
           </div>
           <div className = {styles.additional}>
-            <p className = {styles.director}>director</p>
-            <p className = {styles.castList}>Lorem Ipsum is simply dummy text the printing and typesetting</p>
+            <p className = {styles.director}>{movie.director}</p>
+            <p className = {styles.castList}>{movie.show_cast}</p>
           </div>
         </div>
       </div>

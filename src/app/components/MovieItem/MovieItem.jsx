@@ -19,7 +19,7 @@ class MovieItem extends React.Component {
             <div style={{backgroundImage: 'url(' + movie.poster + ')'}}></div>
           </div>
           <div className= {styles.details}>
-            <div className= {styles.title}>{movie.show_title} Title</div>
+            <div className= {styles.title}>{movie.show_title}</div>
             <Button kind='informative'>{movie.release_year}</Button>
             <div className={styles.genre}>{movie.category}</div>
           </div>
