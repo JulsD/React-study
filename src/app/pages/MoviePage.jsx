@@ -33,7 +33,7 @@ class MoviePage extends React.Component {
           <HeaderNav>
             <NavMenu menu={['Search']}/>
           </HeaderNav>
-          <MovieBox />
+          <MovieBox movie={movies[0]}/>
         </Header>
         <HeaderFooter>
           <MovieInfo />
