@@ -21,7 +21,7 @@ class SearchPage extends React.Component {
   }
 
   render() {
-    const movies = DB || null;
+    let movies = DB || null;
     let searchResultBody = null;
     if (movies) {
       searchResultBody = <MoviesList movies={movies}/>;
@@ -35,7 +35,7 @@ class SearchPage extends React.Component {
           <SearchBox />
         </Header>
         <HeaderFooter>
-          <SearchNav />
+          <SearchNav sum={movies.length}/>
         </HeaderFooter>
         <SearchResult>
           {searchResultBody}

@@ -4,15 +4,13 @@ class SearchSum extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      searchSum: '7 movies found'
-    };
   }
 
   render() {
+    let sumText = this.props.sum ? this.props.sum + ' movies found' : null;
     return (
       <p>
-        {this.state.searchSum}
+        {sumText}
       </p>
     );
   }

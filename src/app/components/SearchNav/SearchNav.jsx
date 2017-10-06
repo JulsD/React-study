@@ -6,10 +6,14 @@ import styles from './search-nav.css';
 
 class SearchNav extends React.Component {
 
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <nav className = {styles.root}>
-        <SearchSum />
+        <SearchSum sum={this.props.sum}/>
         <SearchSort />
       </nav>
     );
