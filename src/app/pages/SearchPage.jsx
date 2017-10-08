@@ -20,6 +20,15 @@ class SearchPage extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      sortBy: 'release date'
+    };
+  }
+
+  handleSortBy(value) {
+    this.setState({
+      sortBy: value
+    });
   }
 
   render() {

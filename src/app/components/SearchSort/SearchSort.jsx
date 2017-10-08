@@ -21,6 +21,7 @@ class SearchSort extends React.Component {
     this.setState({
       [name]: value
     });
+    this.props.onSelectSortBy(value);
   }
 
   render() {
