@@ -1,14 +1,16 @@
 import React from 'react';
 
-import { 
-  Header, 
-  Footer, 
-  SearchResult, 
-  HeaderNav, 
-  SearchBox, 
-  HeaderFooter, 
+import {
+  Header,
+  Footer,
+  SearchResult,
+  HeaderNav,
+  SearchBox,
+  HeaderFooter,
   SearchNav,
-  MoviesList, 
+  SearchSort,
+  SearchSum,
+  MoviesList,
   EmptySearch
 } from './../components';
 
@@ -35,7 +37,10 @@ class SearchPage extends React.Component {
           <SearchBox />
         </Header>
         <HeaderFooter>
-          <SearchNav sum={movies.length}/>
+          <SearchNav>
+            <SearchSum sum={movies.length}/>
+            <SearchSort onSelectSortBy={this.handleSortBy.bind(this)}/>
+          </SearchNav>
         </HeaderFooter>
         <SearchResult>
           {searchResultBody}
