@@ -1,4 +1,5 @@
 import React from 'react';
+import {withRouter} from "react-router-dom";
 
 import Button from '../Button';
 import styles from './search-box.css';
@@ -13,6 +14,7 @@ class SearchBox extends React.Component {
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleInputChange(event) {
@@ -25,9 +27,17 @@ class SearchBox extends React.Component {
     });
   }
 
+  handleSubmit(event) {
+    event.preventDefault();
+    this.props.history.push({
+      pathname: '/search',
+      search: this.state.searchBy + '=' + this.state.searchText
+    })
+  }
+
   render() {
     return (
-        <form className = {styles.root}>
+        <form className = {styles.root} onSubmit={this.handleSubmit}>
           <label>
             <h3 className = {styles.title}>Find your movie</h3>
             <input name='searchText'
@@ -65,4 +75,4 @@ class SearchBox extends React.Component {
 
 }
 
-export default SearchBox;
+export default withRouter(SearchBox);

@@ -1,6 +1,8 @@
 import React from 'react';
 import sortBy from 'lodash/sortBy';
 import reverse from 'lodash/reverse';
+import filter from 'lodash/filter';
+import capitalize from 'lodash/capitalize';
 
 import {
   Header,
@@ -34,14 +36,29 @@ class SearchPage extends React.Component {
   }
 
   render() {
-    let movies = DB || null;
-    movies = sortBy(movies, [this.state.sortBy]);
+    let moviesData = DB;
+    let searchQuery = location.search;
+    if(searchQuery[0] == '?') {
+      searchQuery = searchQuery.slice(1);
+    }
+    let searchProp = searchQuery.slice(0, (searchQuery.indexOf('=')));
+    if(searchProp == 'title') {
+      searchProp = 'show_title';
+    }
+    let searchValue = searchQuery.slice(searchQuery.indexOf('=') + 1).split('%20').join(' ');
+    let searchObj= {};
+    searchObj[searchProp] = searchValue;
+    let filteredMovies = filter(moviesData, searchObj);
+    let movies = [];
     let searchResultBody = null;
-    if (movies) {
+
+    if(filteredMovies.length > 0) {
+      movies = sortBy(filteredMovies, [this.state.sortBy]);
       searchResultBody = <MoviesList movies={reverse(movies)}/>;
     } else {
-     searchResultBody = <EmptySearch />;
+      searchResultBody = <EmptySearch />;
     }
+
     return (
       <div>
         <Header>

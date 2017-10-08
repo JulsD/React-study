@@ -6,14 +6,14 @@ import { SearchPage, MoviePage } from './pages';
 import '../styles/common.css';
 
 class App extends React.Component {
-  
+
   render () {
     return (
       <div>
         <Switch>
           <Route exact path='/' component={SearchPage}/>
           <Route path='/movie/:title' component={MoviePage}/>
-          <Route path='/search/:query' component={SearchPage}/>
+          <Route path='/search' component={SearchPage}/>
         </Switch>
       </div>
     );
@@ -21,5 +21,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-
