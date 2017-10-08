@@ -7,20 +7,25 @@ class SearchSort extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sortBy: 'release date'
+      sortBy: 'release_year'
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   handleInputChange(event) {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
+    let target = event.target;
+    let value = target.value;
+    let name = target.name;
+
+    if (value == 'release date') {
+      value = 'release_year';
+    }
 
     this.setState({
       [name]: value
     });
+
     this.props.onSelectSortBy(value);
   }
 
@@ -28,13 +33,13 @@ class SearchSort extends React.Component {
     return (
       <div className = {styles.root}>
         <h4>Sort by</h4>
-        <label className = {this.state.sortBy ==='release date' ? styles.active : ''}>
+        <label className = {this.state.sortBy ==='release_year' ? styles.active : ''}>
           release date
           <input type='radio'
                  name='sortBy'
                  value='release date'
                  onChange={this.handleInputChange}
-                 checked={this.state.sortBy ==='release date'}/>
+                 checked={this.state.sortBy ==='release_year'}/>
         </label>
         <label className = {this.state.sortBy ==='rating' ? styles.active : ''}>
           rating

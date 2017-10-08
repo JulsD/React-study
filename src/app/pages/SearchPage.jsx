@@ -1,4 +1,6 @@
 import React from 'react';
+import sortBy from 'lodash/sortBy';
+import reverse from 'lodash/reverse';
 
 import {
   Header,
@@ -21,7 +23,7 @@ class SearchPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sortBy: 'release date'
+      sortBy: 'release_year'
     };
   }
 
@@ -33,9 +35,10 @@ class SearchPage extends React.Component {
 
   render() {
     let movies = DB || null;
+    movies = sortBy(movies, [this.state.sortBy]);
     let searchResultBody = null;
     if (movies) {
-      searchResultBody = <MoviesList movies={movies}/>;
+      searchResultBody = <MoviesList movies={reverse(movies)}/>;
     } else {
      searchResultBody = <EmptySearch />;
     }
