@@ -31,31 +31,43 @@ class SearchPage extends React.Component {
       sortBy: value
     });
   }
-
-  render() {
-    
+  
+  componentDidMount (){
     let searchQuery = location.search;
     if(searchQuery[0] == '?') {
       searchQuery = searchQuery.slice(1);
     }
     let searchProp = searchQuery.slice(0, (searchQuery.indexOf('=')));
-    if(searchProp == 'title') {
-      searchProp = 'show_title';
-    }
-    let searchValue = searchQuery.slice(searchQuery.indexOf('=') + 1).split('%20').join(' ');
-    const searchObj= {};
-    searchObj[searchProp] = searchValue;
-    
-    const filteredMovies = api.findMoviesBy(searchObj);
-    
-    let movies = [];
-    let searchResultBody = null;
+    if(searchProp == 'title' || searchProp == 'director') {
+      if(searchProp == 'title') {
+        searchProp = 'show_title';
+      }
+      let searchValue = searchQuery.slice(searchQuery.indexOf('=') + 1).split('%20').join(' ');
+      const searchObj= {};
+      searchObj[searchProp] = searchValue;
 
-    if(filteredMovies.length > 0) {
-      movies = sortBy(filteredMovies, [this.state.sortBy]);
-      searchResultBody = <MoviesList movies={reverse(movies)}/>;
-    } else {
-      searchResultBody = <EmptySearch />;
+      api.findMoviesBy(searchObj).then(
+        (result) => {
+          
+          this.setState({
+            movies: result
+          });
+        }
+      );
+    }
+  }
+
+  render() {
+    
+    let searchResultBody = null;
+    let moviesSorted;
+    if(this.state.movies){
+      if(this.state.movies.length > 0) {
+        moviesSorted = sortBy(this.state.movies, [this.state.sortBy]);
+        searchResultBody = <MoviesList movies={reverse(moviesSorted)}/>;
+      } else {
+        searchResultBody = <EmptySearch />;
+      }
     }
 
     return (
@@ -66,7 +78,7 @@ class SearchPage extends React.Component {
         </Header>
         <HeaderFooter>
           <SearchNav>
-            <SearchSum sum={movies.length}/>
+            {this.state.movies ? <SearchSum sum={this.state.movies.length}/> : ''}
             <SearchSort onSelectSortBy={this.handleSortBy.bind(this)}/>
           </SearchNav>
         </HeaderFooter>

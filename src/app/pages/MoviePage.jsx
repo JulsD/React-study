@@ -17,16 +17,31 @@ class MoviePage extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {}
+  }
+  
+  componentDidMount (){
+    const movieTitle = this.props.match.params.title;
+    let movie;
+    api.getMovieByTitle(movieTitle).then(
+      (result) => {
+        movie = result;
+        return api.findMoviesBy({'director':movie.director})
+      }
+    ).then(
+      (moviesByDir) => {
+        this.setState({
+          movie,
+          moviesByDir
+        });
+      }
+    );
   }
 
   render() {
-    const movieTitle = this.props.match.params.title;
-    const movie = api.getMovieByTitle(movieTitle);
-    const movieDirector = movie.director;
-    let searchResultBody = null;
-    if (movie) {
-      const moviesByDir = api.findMoviesBy({'director':movieDirector});
-      searchResultBody = <MoviesList movies={moviesByDir}/>;
+    let searchResult = 'Loading';
+    if (this.state.movie) {
+      searchResult = <MoviesList movies={this.state.moviesByDir}/>;
     }
 
     return (
@@ -35,13 +50,13 @@ class MoviePage extends React.Component {
           <HeaderNav>
             <NavMenu menu={['Search']}/>
           </HeaderNav>
-          <MovieBox movie={movie}/>
+          { this.state.movie ?  <MovieBox movie={this.state.movie}/>  : searchResult }
         </Header>
         <HeaderFooter>
-          <MovieInfo movieInfo={movieDirector}/>
+          { this.state.movie ?  <MovieInfo movieInfo={this.state.movie.director}/>  : searchResult }
         </HeaderFooter>
         <SearchResult>
-          {searchResultBody}
+          {searchResult}
         </SearchResult>
         <Footer />
       </div>
