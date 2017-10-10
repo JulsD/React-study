@@ -3,8 +3,6 @@ import { Route, Switch } from 'react-router-dom';
 
 import { SearchPage, MoviePage } from './pages';
 
-import '../styles/common.css';
-
 class App extends React.Component {
 
   render () {
