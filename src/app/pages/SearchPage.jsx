@@ -1,8 +1,7 @@
 import React from 'react';
 import sortBy from 'lodash/sortBy';
 import reverse from 'lodash/reverse';
-import filter from 'lodash/filter';
-import capitalize from 'lodash/capitalize';
+import * as api from '../data/api';
 
 import {
   Header,
@@ -17,8 +16,6 @@ import {
   MoviesList,
   EmptySearch
 } from './../components';
-
-import DB from '../../../mock-db/db.json';
 
 class SearchPage extends React.Component {
 
@@ -36,7 +33,7 @@ class SearchPage extends React.Component {
   }
 
   render() {
-    let moviesData = DB;
+    
     let searchQuery = location.search;
     if(searchQuery[0] == '?') {
       searchQuery = searchQuery.slice(1);
@@ -46,9 +43,11 @@ class SearchPage extends React.Component {
       searchProp = 'show_title';
     }
     let searchValue = searchQuery.slice(searchQuery.indexOf('=') + 1).split('%20').join(' ');
-    let searchObj= {};
+    const searchObj= {};
     searchObj[searchProp] = searchValue;
-    let filteredMovies = filter(moviesData, searchObj);
+    
+    const filteredMovies = api.findMoviesBy(searchObj);
+    
     let movies = [];
     let searchResultBody = null;
 

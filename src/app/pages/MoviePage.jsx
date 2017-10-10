@@ -1,6 +1,5 @@
 import React from 'react';
-import find from 'lodash/find';
-import filter from 'lodash/filter';
+import * as api from '../data/api';
 
 import {
   Header,
@@ -14,8 +13,6 @@ import {
   MoviesList
 } from './../components';
 
-import DB from '../../../mock-db/db.json';
-
 class MoviePage extends React.Component {
 
   constructor(props) {
@@ -23,13 +20,12 @@ class MoviePage extends React.Component {
   }
 
   render() {
-    let movieTitle = this.props.match.params.title;
-    let movies = DB;
-    let movie = find(movies, {'show_title':movieTitle});
-    let movieDirector = movie.director;
-    let moviesByDir = filter(movies, {'director':movieDirector})
+    const movieTitle = this.props.match.params.title;
+    const movie = api.getMovieByTitle(movieTitle);
+    const movieDirector = movie.director;
     let searchResultBody = null;
-    if (movies) {
+    if (movie) {
+      const moviesByDir = api.findMoviesBy({'director':movieDirector});
       searchResultBody = <MoviesList movies={moviesByDir}/>;
     }
 
