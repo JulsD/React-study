@@ -22,6 +22,7 @@
   background-repeat: no-repeat;
   background-position: center;
   z-index: -1;
+  background-color: rgba(0,0,0,.5);
 }
 .details {
   padding: 10px 5px;
