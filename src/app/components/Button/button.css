@@ -10,18 +10,22 @@
   cursor: pointer;
 }
 .primary {
+  composes: root;
   background-color: #f40612;
   color: #fff;
 }
 .default {
+  composes: root;
   background-color: #f3f3f3;
   color: #f40612;
 }
 .informative {
+  composes: root;
   padding: 3px;
   border: 1px solid black;
 }
 .not-active {
+  composes: root;
   background-color: #f3f3f3;
   color: #666;
 }

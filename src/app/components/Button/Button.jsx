@@ -19,31 +19,31 @@ class Button extends React.Component {
     
     if(this.props.type == 'button' || this.props.type == 'submit') {
       return (
-          <button type={this.props.type} className={`${btnStyleMap[this.props.kind]} ${styles.root}`}>
+          <button type={this.props.type} className={`${btnStyleMap[this.props.kind]}`}>
             {this.props.children}
           </button>
       );
     } else if (this.props.type == 'link'){
       return (
-          <Link to={this.props.to} className={`${btnStyleMap[this.props.kind]} ${styles.root}`}>
+          <Link to={this.props.to} className={`${btnStyleMap[this.props.kind]}`}>
             {this.props.children}
           </Link>
       );
     } else if (this.props.type == 'a'){
       return (
-          <a to={this.props.href} className={`${btnStyleMap[this.props.kind]} ${styles.root}`}>
+          <a to={this.props.href} className={`${btnStyleMap[this.props.kind]}`}>
             {this.props.children}
           </a>
       );
     } else if (this.props.type == 'label'){
       return (
-          <label htmlFor={this.props.for} className={`${btnStyleMap[this.props.kind]} ${styles.root}`}>
+          <label htmlFor={this.props.for} className={`${btnStyleMap[this.props.kind]}`}>
             {this.props.children}
           </label>
       );
     } else {
       return (
-          <div className={`${btnStyleMap[this.props.kind]} ${styles.root}`}>
+          <div className={`${btnStyleMap[this.props.kind]}`}>
             {this.props.children}
           </div>
       );
