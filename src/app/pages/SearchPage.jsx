@@ -2,6 +2,7 @@ import React from 'react';
 import sortBy from 'lodash/sortBy';
 import reverse from 'lodash/reverse';
 import * as api from '../data/api';
+import * as queryString from 'query-string';
 
 import {
   Header,
@@ -33,18 +34,16 @@ class SearchPage extends React.Component {
   }
   
   componentDidMount (){
-    let searchQuery = location.search;
-    if(searchQuery[0] == '?') {
-      searchQuery = searchQuery.slice(1);
-    }
-    let searchProp = searchQuery.slice(0, (searchQuery.indexOf('=')));
-    if(searchProp == 'title' || searchProp == 'director') {
-      if(searchProp == 'title') {
-        searchProp = 'show_title';
+    const searchQuery = queryString.parse(location.search);
+    let searchObj= {};
+    if(searchQuery['title'] || searchQuery['director']) {
+      if(searchQuery['title']) {
+        searchObj = {
+          'show_title': searchQuery['title']
+        };
+      } else {
+        searchObj = searchQuery;
       }
-      let searchValue = searchQuery.slice(searchQuery.indexOf('=') + 1).split('%20').join(' ');
-      const searchObj= {};
-      searchObj[searchProp] = searchValue;
 
       api.findMoviesBy(searchObj).then(
         (result) => {
