@@ -32,7 +32,7 @@ class SearchPage extends React.Component {
       sortBy: value
     });
   }
-  
+
   componentDidMount (){
     const searchQuery = queryString.parse(location.search);
     let searchObj= {};
@@ -47,7 +47,7 @@ class SearchPage extends React.Component {
 
       api.findMoviesBy(searchObj).then(
         (result) => {
-          
+
           this.setState({
             movies: result
           });
@@ -57,7 +57,7 @@ class SearchPage extends React.Component {
   }
 
   render() {
-    
+
     let searchResultBody = null;
     let moviesSorted;
     if(this.state.movies){
@@ -78,7 +78,7 @@ class SearchPage extends React.Component {
         <HeaderFooter>
           <SearchNav>
             {this.state.movies ? <SearchSum sum={this.state.movies.length}/> : ''}
-            <SearchSort onSelectSortBy={this.handleSortBy.bind(this)}/>
+            {this.state.movies ? <SearchSort onSelectSortBy={this.handleSortBy.bind(this)}/> : ''}
           </SearchNav>
         </HeaderFooter>
         <SearchResult>
