@@ -19,9 +19,8 @@ class MoviePage extends React.Component {
     super(props);
     this.state = {}
   }
-  
-  componentDidMount (){
-    const movieTitle = this.props.match.params.title;
+
+  searchForMovie(movieTitle){
     let movie;
     api.getMovieByTitle(movieTitle).then(
       (result) => {
@@ -36,6 +35,14 @@ class MoviePage extends React.Component {
         });
       }
     );
+  }
+
+  componentDidMount (){
+    this.searchForMovie(this.props.match.params.title);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.searchForMovie(nextProps.match.params.title);
   }
 
   render() {
