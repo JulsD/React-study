@@ -42,7 +42,9 @@ class MoviePage extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.searchMovieByTitle(nextProps.match.params.title);
+    if(nextProps.match.params.title !== this.props.match.params.title) {
+      this.searchMovieByTitle(nextProps.match.params.title);
+    }
   }
 
   render() {
