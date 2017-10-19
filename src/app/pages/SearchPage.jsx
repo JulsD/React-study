@@ -33,8 +33,8 @@ class SearchPage extends React.Component {
     });
   }
 
-  componentDidMount (){
-    const searchQuery = queryString.parse(this.props.location.search);
+  searchForMovies(query){
+    const searchQuery = queryString.parse(query);
     let searchObj= {};
     if(searchQuery['title'] || searchQuery['director']) {
       if(searchQuery['title']) {
@@ -54,6 +54,14 @@ class SearchPage extends React.Component {
         }
       );
     }
+  }
+
+  componentDidMount (){
+    this.searchForMovies(this.props.location.search);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.searchForMovies(nextProps.location.search);
   }
 
   render() {
