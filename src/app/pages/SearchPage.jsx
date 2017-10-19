@@ -61,7 +61,7 @@ class SearchPage extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(nextProps.location.searc !== this.props.location.search) {
+    if(nextProps.location.search !== this.props.location.search) {
       this.searchMoviesByParam(nextProps.location.search);
     }
   }
