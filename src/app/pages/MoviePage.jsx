@@ -20,7 +20,7 @@ class MoviePage extends React.Component {
     this.state = {}
   }
 
-  searchForMovie(movieTitle){
+  searchMovieByTitle(movieTitle){
     let movie;
     api.getMovieByTitle(movieTitle).then(
       (result) => {
@@ -38,11 +38,11 @@ class MoviePage extends React.Component {
   }
 
   componentDidMount (){
-    this.searchForMovie(this.props.match.params.title);
+    this.searchMovieByTitle(this.props.match.params.title);
   }
 
   componentWillReceiveProps(nextProps) {
-    this.searchForMovie(nextProps.match.params.title);
+    this.searchMovieByTitle(nextProps.match.params.title);
   }
 
   render() {
