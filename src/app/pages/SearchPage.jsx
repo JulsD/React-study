@@ -34,7 +34,7 @@ class SearchPage extends React.Component {
   }
 
   componentDidMount (){
-    const searchQuery = queryString.parse(location.search);
+    const searchQuery = queryString.parse(this.props.location.search);
     let searchObj= {};
     if(searchQuery['title'] || searchQuery['director']) {
       if(searchQuery['title']) {
