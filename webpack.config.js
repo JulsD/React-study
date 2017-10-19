@@ -61,7 +61,9 @@ const config = {
   devServer: {
     contentBase: SRC_DIR,
     hot: true,
-    historyApiFallback: true
+    historyApiFallback: {
+      disableDotRule: true
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({
