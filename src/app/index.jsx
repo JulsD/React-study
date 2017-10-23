@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux'
 
 import { SearchPage, MoviePage } from './pages';
 
@@ -18,4 +19,10 @@ class App extends React.Component {
   }
 }
 
-export default App;
+function mapStateToProps (state) {
+  return {
+    user: state.user
+  }
+}
+
+export default connect(mapStateToProps)(App);
