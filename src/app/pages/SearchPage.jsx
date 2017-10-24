@@ -3,6 +3,7 @@ import sortBy from 'lodash/sortBy';
 import reverse from 'lodash/reverse';
 import * as api from '../data/api';
 import * as queryString from 'query-string';
+import { connect } from 'react-redux';
 
 import {
   Header,
@@ -22,15 +23,7 @@ class SearchPage extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      sortBy: 'release_year'
-    };
-  }
-
-  handleSortBy(value) {
-    this.setState({
-      sortBy: value
-    });
+    this.state = {}
   }
 
   searchMoviesByParam(query){
@@ -72,7 +65,7 @@ class SearchPage extends React.Component {
     let moviesSorted;
     if(this.state.movies){
       if(this.state.movies.length > 0) {
-        moviesSorted = sortBy(this.state.movies, [this.state.sortBy]);
+        moviesSorted = sortBy(this.state.movies, [this.props.sortBy]);
         searchResultBody = <MoviesList movies={reverse(moviesSorted)}/>;
       } else {
         searchResultBody = <EmptySearch />;
@@ -88,7 +81,7 @@ class SearchPage extends React.Component {
         <HeaderFooter>
           <SearchNav>
             {this.state.movies ? <SearchSum sum={this.state.movies.length}/> : ''}
-            {this.state.movies ? <SearchSort onSelectSortBy={this.handleSortBy.bind(this)}/> : ''}
+            {this.state.movies ? <SearchSort /> : ''}
           </SearchNav>
         </HeaderFooter>
         <SearchResult>
@@ -101,4 +94,10 @@ class SearchPage extends React.Component {
 
 }
 
-export default SearchPage;
+function mapProps(state) {
+  return {
+    sortBy: state.sort
+  }
+}
+
+export default connect(mapProps)(SearchPage);
