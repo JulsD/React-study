@@ -1,7 +1,6 @@
-const initialState = {
-  user: 'Unknown User'
-};
+import { combineReducers } from 'redux';
+import sort from './sort';
 
-export default function userstate(state = initialState) {
-  return state;
-}
+export default combineReducers({
+  sort
+})
