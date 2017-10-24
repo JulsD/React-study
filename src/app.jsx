@@ -1,14 +1,15 @@
 import React from 'react'
 import { render } from 'react-dom';
-import { Provider } from 'react-redux'
-import { AppContainer } from 'react-hot-loader'
+import { Provider } from 'react-redux';
+import { AppContainer } from 'react-hot-loader';
 import { BrowserRouter } from 'react-router-dom';
+import { createStore } from 'redux';
+import rootReducer from './app/reducers';
 
 import './styles/common.css';
 import App from './app/index.jsx';
-import configureStore from './app/store/configureStore'
 
-const store = configureStore()
+const store = createStore(rootReducer);
 
 render((
   <Provider store={store}>
