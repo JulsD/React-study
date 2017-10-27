@@ -14,16 +14,15 @@ function json(response) {
 }
 
 export function getMovieById(movie_id) {
-  let params = '/movie/' + movie_id + '?api_key=' + api_key;
-  let url = dbUrl + params;
+  let url = dbUrl + '/movie/' + movie_id + '?api_key=' + api_key;
+
   return fetch(url)  
     .then(status)  
     .then(json);
 }
 
 export function findMoviesByTitle(searchQuery) {
-  let params = '/search/movie?api_key=' + api_key + '&query=' + searchQuery;
-  let url = dbUrl + params;
+  let url = dbUrl + '/search/movie?api_key=' + api_key + '&query=' + searchQuery;
   
   return fetch(url)  
     .then(status)  
@@ -31,8 +30,7 @@ export function findMoviesByTitle(searchQuery) {
 }
 
 function findDirectorId(searchQuery) {
-  let params = '/search/person?api_key=' + api_key + '&query=' + searchQuery;
-  let url = dbUrl + params;
+  let url = dbUrl + '/search/person?api_key=' + api_key + '&query=' + searchQuery;
   
   return fetch(url)  
     .then(status)  
@@ -47,8 +45,8 @@ export function findMoviesByDirectorName(directorName) {
   
   return directorId.then(
     function(data){
-      let params = '/person/' + data + '/movie_credits?api_key=' + api_key;
-      let url = dbUrl + params;
+      let url = dbUrl + '/person/' + data + '/movie_credits?api_key=' + api_key;
+
       return fetch(url)  
       .then(status)  
       .then(json);
@@ -56,9 +54,8 @@ export function findMoviesByDirectorName(directorName) {
 }
 
 export function findMovieDirectorAndActors(movieId) {
-      let params = '/movie/' + movieId + '/credits?api_key=' + api_key;
-      let url = dbUrl + params;
-      
+      let url = dbUrl + '/movie/' + movieId + '/credits?api_key=' + api_key;
+
       return fetch(url)  
       .then(status)  
       .then(json);
