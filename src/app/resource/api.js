@@ -13,6 +13,14 @@ function json(response) {
   return response.json()
 }
 
+export function getMovieById(movie_id) {
+  let params = '/movie/' + movie_id + '?api_key=' + api_key;
+  let url = dbUrl + params;
+  return fetch(url)  
+    .then(status)  
+    .then(json);
+}
+
 export function findMoviesByTitle(searchQuery) {
   let params = '/search/movie?api_key=' + api_key + '&query=' + searchQuery;
   let url = dbUrl + params;
@@ -45,4 +53,13 @@ export function findMoviesByDirectorName(directorName) {
       .then(status)  
       .then(json);
   })
+}
+
+export function findMovieDirectorAndActors(movieId) {
+      let params = '/movie/' + movieId + '/credits?api_key=' + api_key;
+      let url = dbUrl + params;
+      
+      return fetch(url)  
+      .then(status)  
+      .then(json);
 }
