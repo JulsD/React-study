@@ -1,8 +1,9 @@
 import React from 'react';
 import sortBy from 'lodash/sortBy';
 import reverse from 'lodash/reverse';
-import * as api from '../data/api';
+import * as api from '../resource/api';
 import * as queryString from 'query-string';
+import filter from 'lodash/filter';
 
 import {
   Header,
@@ -35,25 +36,32 @@ class SearchPage extends React.Component {
 
   searchMoviesByParam(query){
     const searchQuery = queryString.parse(query);
-    let searchObj= {};
-    if(searchQuery['title'] || searchQuery['director']) {
+    let self = this;
       if(searchQuery['title']) {
-        searchObj = {
-          'show_title': searchQuery['title']
-        };
-      } else {
-        searchObj = searchQuery;
-      }
-
-      api.findMoviesBy(searchObj).then(
-        (result) => {
-
-          this.setState({
-            movies: result
-          });
-        }
-      );
-    }
+        api.findMoviesByTitle(searchQuery['title'])
+         .then(function(data) {  
+           self.setState({
+             movies: data.results
+           })
+         })
+         .catch(function(error) {
+           console.log('Request failed', error);  
+         });
+       
+     } else if (searchQuery['director']) {
+       api.findMoviesByDirectorName(searchQuery['director'])
+        .then(function(data) {  
+          console.log('Request succeeded with JSON response', data);
+          self.setState({
+            movies: filter(data.crew, { 'job': 'Director' })
+          })
+        })
+        .catch(function(error) {
+          console.log('Request failed', error);  
+        });
+     } else {
+       return;
+     }
   }
 
   componentDidMount (){

@@ -1,28 +1,48 @@
-import filter from 'lodash/filter';
-import find from 'lodash/find';
+const dbUrl = 'https://api.themoviedb.org/3';
+const api_key = '2d0c9f9df6e187ac34ef7a3136100918';
 
-import DB from '../../../mock-db/db.json';
-
-export function getMovieByTitle(movieTitle) {
-  return new Promise((resolve, reject) => {
-    let result = find(DB, {'show_title':movieTitle});
-    setTimeout(
-      () => {
-        if(result) {
-          resolve(result);
-        } else {
-          reject(new Error('Film not found'));
-        }
-      }
-    , 2000);
-  })
+function status(response) {  
+  if (response.status >= 200 && response.status < 300) {  
+    return Promise.resolve(response)  
+  } else {  
+    return Promise.reject(new Error(response.statusText))  
+  }  
 }
 
-export function findMoviesBy(params) {
-  return new Promise((resolve) => {
-    let result = filter(DB, params);
-    setTimeout(
-      () => {  resolve(result); }
-    , 2000);
+function json(response) {  
+  return response.json()
+}
+
+export function findMoviesByTitle(searchQuery) {
+  let params = '/search/movie?api_key=' + api_key + '&query=' + searchQuery;
+  let url = dbUrl + params;
+  
+  return fetch(url)  
+    .then(status)  
+    .then(json);
+}
+
+function findDirectorId(searchQuery) {
+  let params = '/search/person?api_key=' + api_key + '&query=' + searchQuery;
+  let url = dbUrl + params;
+  
+  return fetch(url)  
+    .then(status)  
+    .then(json)
+    .then(function(data) {  
+      return data.results[0].id;
+    });
+}
+
+export function findMoviesByDirectorName(directorName) {
+  let directorId = findDirectorId(directorName);
+  
+  return directorId.then(
+    function(data){
+      let params = '/person/' + data + '/movie_credits?api_key=' + api_key;
+      let url = dbUrl + params;
+      return fetch(url)  
+      .then(status)  
+      .then(json);
   })
 }
