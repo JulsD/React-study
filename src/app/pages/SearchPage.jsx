@@ -47,7 +47,7 @@ class SearchPage extends React.Component {
          .catch(function(error) {
            console.log('Request failed', error);  
          });
-       
+
      } else if (searchQuery['director']) {
        api.findMoviesByDirectorName(searchQuery['director'])
         .then(function(data) {  
