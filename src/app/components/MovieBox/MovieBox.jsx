@@ -6,7 +6,9 @@ class MovieBox extends React.Component {
 
   constructor(props) {
     super(props);
-
+    this.state = {
+      imageBaseUrl: 'https://image.tmdb.org/t/p/w500'
+    } 
   }
 
   render() {
@@ -15,27 +17,34 @@ class MovieBox extends React.Component {
       <div className = {styles.root}>
         <div className = {styles.coverWrapper}>
           <div className = {styles.cover}>
-            <div style={{backgroundImage: 'url(' + movie.poster + ')'}}></div>
+            <div style={{backgroundImage: 'url(' + this.state.imageBaseUrl + movie.poster_path + ')'}}></div>
           </div>
         </div>
         <div className = {styles.details}>
           <div className = {styles.row}>
             <h2 className = {styles.title}>
-              {movie.show_title}
+              {movie.title}
             </h2>
             <div className = {styles.rate}>
-              <span>{movie.rating}</span>
+              <span>{movie.vote_average}</span>
             </div>
-            <p className = {styles.genre}>{movie.category}</p>
-            <div className = {styles.numb}>{movie.release_year}</div>
-            <div className = {styles.numb}>{movie.runtime}</div>
+            <p className = {styles.genre}>
+              {movie.genres.map(item => <span key={item.id}>{item.name} </span>)}
+            </p>
+            <div className = {styles.numb}>{movie.release_date}</div>
+            <div className = {styles.numb}>{movie.runtime} min</div>
           </div>
           <div className = {styles.row}>
-            <p className = {styles.description}>{movie.summary}</p>
+            <p className = {styles.description}>{movie.overview}</p>
           </div>
           <div className = {styles.additional}>
-            <p className = {styles.director}>{movie.director}</p>
-            <p className = {styles.castList}>{movie.show_cast}</p>
+            <p>
+              {movie.director.map(item => <span key={item.id}>{item.name}<i>, </i></span>)}
+            </p>
+            <p>
+              {movie.actors.map(item => <span key={item.cast_id}>{item.name}<i>, </i></span>)}
+                
+            </p>
           </div>
         </div>
       </div>
