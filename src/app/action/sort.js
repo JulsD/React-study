@@ -1,6 +1,6 @@
 export function setSort(value){
   return {
-    type: 'SET',
+    type: 'SET_SORT',
     payload: value
   }
 }
