@@ -1,20 +1,27 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 class MovieInfo extends React.Component {
 
   constructor(props) {
     super(props);
   }
-
+  
   render() {
     return (
       <div>
         Films by 
-        {this.props.movieInfo.map(item => <span key={item.id}>{item.name}<i> </i></span>)}
+        {this.props.directors.map(item => <span key={item.id}><i> </i>{item.name}</span>)}
       </div>
     );
   }
 
 }
 
-export default MovieInfo;
+function mapProps(state) {
+  return {
+    directors: state.movie.movie.director
+  }
+}
+
+export default connect(mapProps)(MovieInfo);

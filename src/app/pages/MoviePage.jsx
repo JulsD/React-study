@@ -68,10 +68,10 @@ class MoviePage extends React.Component {
           <HeaderNav>
             <NavMenu menu={['Search']}/>
           </HeaderNav>
-          { this.props.movieInfo.movie ?  <MovieBox movie={this.props.movieInfo.movie}/>  : searchResult }
+          { this.props.movieInfo.movie ?  <MovieBox/>  : searchResult }
         </Header>
         <HeaderFooter>
-          { this.props.movieInfo.movie ?  <MovieInfo movieInfo={this.props.movieInfo.movie.director}/>  : searchResult }
+          { this.props.movieInfo.movie ?  <MovieInfo/>  : searchResult }
         </HeaderFooter>
         <SearchResult>
           {searchResult}
