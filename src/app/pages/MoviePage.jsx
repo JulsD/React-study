@@ -1,6 +1,8 @@
 import React from 'react';
 import * as api from '../resource/api';
 import filter from 'lodash/filter';
+import { connect } from 'react-redux';
+import { setMovie } from '../action/movie';
 
 import {
   Header,
@@ -34,11 +36,11 @@ class MoviePage extends React.Component {
          return api.findMoviesByDirectorName(movie.director[0].name);
        })
        .then(function(data) {
-           self.setState({
-             movie,
-             moviesByDir: filter(data.crew, { 'job': 'Director' })
-           })
+         self.props.setMovie({
+           movie,
+           moviesByDir: filter(data.crew, { 'job': 'Director' })
          })
+       })         
      .catch(function(error) {
        console.log('Request failed', error);  
      });
@@ -56,8 +58,8 @@ class MoviePage extends React.Component {
 
   render() {
     let searchResult = 'Loading';
-    if (this.state.movie) {
-      searchResult = <MoviesList movies={this.state.moviesByDir}/>;
+    if (this.props.movieInfo.movie) {
+      searchResult = <MoviesList movies={this.props.movieInfo.moviesByDir}/>;
     }
 
     return (
@@ -66,10 +68,10 @@ class MoviePage extends React.Component {
           <HeaderNav>
             <NavMenu menu={['Search']}/>
           </HeaderNav>
-          { this.state.movie ?  <MovieBox movie={this.state.movie}/>  : searchResult }
+          { this.props.movieInfo.movie ?  <MovieBox movie={this.props.movieInfo.movie}/>  : searchResult }
         </Header>
         <HeaderFooter>
-          { this.state.movie ?  <MovieInfo movieInfo={this.state.movie.director}/>  : searchResult }
+          { this.props.movieInfo.movie ?  <MovieInfo movieInfo={this.props.movieInfo.movie.director}/>  : searchResult }
         </HeaderFooter>
         <SearchResult>
           {searchResult}
@@ -81,4 +83,14 @@ class MoviePage extends React.Component {
 
 }
 
-export default MoviePage;
+const actions = {
+  setMovie
+}
+
+function mapProps(state) {
+  return {
+    movieInfo: state.movie
+  }
+}
+
+export default connect(mapProps, actions)(MoviePage);
