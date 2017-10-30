@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import MovieItem from './../MovieItem';
 import styles from './movies-list.css';
@@ -11,7 +12,7 @@ class MoviesList extends React.Component {
   }
 
   render() {
-    let movies = this.props.movies || null;
+    let movies = this.props.movieList || null;
     const listMovies = movies.map((movie) =>
       <MovieItem key={movie.id.toString()} movie={movie} />
     );
@@ -24,4 +25,10 @@ class MoviesList extends React.Component {
 
 }
 
-export default MoviesList;
+function mapProps(state) {
+  return {
+    movieList: state.movie.moviesByDir
+  }
+}
+
+export default connect(mapProps)(MoviesList);
