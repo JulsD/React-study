@@ -15,12 +15,13 @@ class MovieItem extends React.Component {
   render() {
     let movie = this.props.movie;
     const imageBaseUrl = 'https://image.tmdb.org/t/p/w500';
+    let coverPath = movie.poster_path ? imageBaseUrl + movie.poster_path : '';
     const linkTo = `/movie/${movie.id}?title=${movie.title}`;
     return (
       <Link to={linkTo}>
         <div className = {styles.root}>
           <div className= {styles.cover}>
-            <div style={{backgroundImage: 'url(' + imageBaseUrl + movie.poster_path + ')'}}></div>
+            <div style={{backgroundImage: 'url(' + coverPath + ')'}}></div>
           </div>
           <div className= {styles.details}>
             <div className= {styles.title}>{movie.title}</div>
