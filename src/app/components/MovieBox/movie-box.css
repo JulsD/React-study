@@ -79,3 +79,7 @@
 .additional p {
   margin-bottom: 10px;
 }
+.additional span:last-child i {
+  display: none;
+  font-style: normal;
+}

@@ -9,7 +9,8 @@ class MovieInfo extends React.Component {
   render() {
     return (
       <div>
-        {`Films by ${this.props.movieInfo}`}
+        Films by 
+        {this.props.movieInfo.map(item => <span key={item.id}>{item.name}<i> </i></span>)}
       </div>
     );
   }

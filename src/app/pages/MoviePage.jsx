@@ -1,5 +1,6 @@
 import React from 'react';
-import * as api from '../data/api';
+import * as api from '../resource/api';
+import filter from 'lodash/filter';
 
 import {
   Header,
@@ -20,30 +21,36 @@ class MoviePage extends React.Component {
     this.state = {}
   }
 
-  searchMovieByTitle(movieTitle){
-    let movie;
-    api.getMovieByTitle(movieTitle).then(
-      (result) => {
-        movie = result;
-        return api.findMoviesBy({'director':movie.director})
-      }
-    ).then(
-      (moviesByDir) => {
-        this.setState({
-          movie,
-          moviesByDir
-        });
-      }
-    );
+  searchMovieById(movieId){
+    let movie, self = this;
+    api.getMovieById(movieId)
+     .then(function(result) {
+       movie = result;
+       return api.findMovieDirectorAndActors(movieId)
+     })
+     .then(function(result) {
+         movie.actors = result.cast;
+         movie.director = filter(result.crew, { 'job': 'Director' });
+         return api.findMoviesByDirectorName(movie.director[0].name);
+       })
+       .then(function(data) {
+           self.setState({
+             movie,
+             moviesByDir: filter(data.crew, { 'job': 'Director' })
+           })
+         })
+     .catch(function(error) {
+       console.log('Request failed', error);  
+     });
   }
 
   componentDidMount (){
-    this.searchMovieByTitle(this.props.match.params.title);
+    this.searchMovieById(this.props.match.params.id);
   }
 
   componentWillReceiveProps(nextProps) {
-    if(nextProps.match.params.title !== this.props.match.params.title) {
-      this.searchMovieByTitle(nextProps.match.params.title);
+    if(nextProps.match.params.id !== this.props.match.params.id) {
+      this.searchMovieById(nextProps.match.params.id);
     }
   }
 
