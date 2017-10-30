@@ -8,9 +8,6 @@ class SearchSort extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      sortBy: 'release_date'
-    };
 
     this.handleInputChange = this.handleInputChange.bind(this);
   }
@@ -25,21 +22,21 @@ class SearchSort extends React.Component {
     return (
       <div className = {styles.root}>
         <h4>Sort by</h4>
-        <label className = {this.state.sortBy ==='release_date' ? styles.active : ''}>
+        <label className = {this.props.sortBy ==='release_date' ? styles.active : ''}>
           release date
           <input type='radio'
                  name='sortBy'
-                 value='release date'
+                 value='release_date'
                  onChange={this.handleInputChange}
-                 checked={this.state.sortBy ==='release_date'}/>
+                 checked={this.props.sortBy ==='release_date'}/>
         </label>
-        <label className = {this.state.sortBy ==='vote_average' ? styles.active : ''}>
+        <label className = {this.props.sortBy ==='vote_average' ? styles.active : ''}>
           rating
           <input type='radio'
                  name='sortBy'
                  value='vote_average'
                  onChange={this.handleInputChange}
-                 checked={this.state.sortBy ==='vote_average'} />
+                 checked={this.props.sortBy ==='vote_average'} />
         </label>
       </div>
     );
