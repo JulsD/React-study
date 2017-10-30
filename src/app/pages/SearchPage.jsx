@@ -86,7 +86,7 @@ class SearchPage extends React.Component {
         </Header>
         <HeaderFooter>
           <SearchNav>
-            {this.props.search.movies ? <SearchSum sum={this.props.search.movies.length}/> : ''}
+            {this.props.search.movies ? <SearchSum/> : ''}
             {this.props.search.movies ? <SearchSort /> : ''}
           </SearchNav>
         </HeaderFooter>
