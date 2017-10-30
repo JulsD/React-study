@@ -1,3 +1,5 @@
+import * as queryString from 'query-string';
+
 const dbUrl = 'https://api.themoviedb.org/3';
 const api_key = '2d0c9f9df6e187ac34ef7a3136100918';
 
@@ -14,7 +16,7 @@ function json(response) {
 }
 
 export function getMovieById(movie_id) {
-  let url = dbUrl + '/movie/' + movie_id + '?api_key=' + api_key;
+  const url = dbUrl + '/movie/' + movie_id + '?' + queryString.stringify({api_key: api_key});
 
   return fetch(url)  
     .then(status)  
@@ -22,7 +24,7 @@ export function getMovieById(movie_id) {
 }
 
 export function findMoviesByTitle(searchQuery) {
-  let url = dbUrl + '/search/movie?api_key=' + api_key + '&query=' + searchQuery;
+  const url = dbUrl + '/search/movie?' + queryString.stringify({api_key: api_key, query: searchQuery});
   
   return fetch(url)  
     .then(status)  
@@ -30,7 +32,7 @@ export function findMoviesByTitle(searchQuery) {
 }
 
 function findDirectorId(searchQuery) {
-  let url = dbUrl + '/search/person?api_key=' + api_key + '&query=' + searchQuery;
+  const url = dbUrl + '/search/person?' + queryString.stringify({api_key: api_key, query: searchQuery});
   
   return fetch(url)  
     .then(status)  
@@ -41,20 +43,20 @@ function findDirectorId(searchQuery) {
 }
 
 export function findMoviesByDirectorName(directorName) {
-  let directorId = findDirectorId(directorName);
+  const directorId = findDirectorId(directorName);
   
-  return directorId.then(
+  return directorId
+  .then(
     function(data){
-      let url = dbUrl + '/person/' + data + '/movie_credits?api_key=' + api_key;
-
+      const url = dbUrl + '/person/' + data + '/movie_credits?' + queryString.stringify({api_key: api_key});
       return fetch(url)  
-      .then(status)  
-      .then(json);
   })
+  .then(status)  
+  .then(json);
 }
 
 export function findMovieDirectorAndActors(movieId) {
-      let url = dbUrl + '/movie/' + movieId + '/credits?api_key=' + api_key;
+      const url = dbUrl + '/movie/' + movieId + '/credits?' + queryString.stringify({api_key: api_key});
 
       return fetch(url)  
       .then(status)  
