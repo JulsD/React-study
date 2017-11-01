@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import styles from './movie-box.css';
 
@@ -53,4 +54,10 @@ class MovieBox extends React.Component {
 
 }
 
-export default MovieBox;
+function mapProps(state) {
+  return {
+    movie: state.movie.movie
+  }
+}
+
+export default connect(mapProps)(MovieBox);

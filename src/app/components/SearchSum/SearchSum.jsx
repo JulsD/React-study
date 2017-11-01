@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 class SearchSum extends React.Component {
 
@@ -7,7 +8,7 @@ class SearchSum extends React.Component {
   }
 
   render() {
-    let sumText = this.props.sum ? this.props.sum + ' movies found' : null;
+    let sumText = this.props.search.movies.length ? this.props.search.movies.length + ' movies found' : null;
     return (
       <p>
         {sumText}
@@ -17,4 +18,10 @@ class SearchSum extends React.Component {
 
 }
 
-export default SearchSum;
+function mapProps(state) {
+  return {
+    search: state.search
+  }
+}
+
+export default connect(mapProps)(SearchSum);

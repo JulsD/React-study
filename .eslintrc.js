@@ -26,7 +26,8 @@ module.exports = {
   },
   "rules": {
     "jsx-quotes": [2, "prefer-single"],
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "no-console": 0
   },
   "plugins": [
     "react",
@@ -39,9 +40,6 @@ module.exports = {
       "env": {
         "node": true,
         "browser": false
-      },
-      "rules": {
-        "no-console": 0
       }
     }
   ]

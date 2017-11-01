@@ -3,6 +3,8 @@ import sortBy from 'lodash/sortBy';
 import reverse from 'lodash/reverse';
 import * as api from '../resource/api';
 import * as queryString from 'query-string';
+import { connect } from 'react-redux';
+import { setSearch } from '../action/search';
 import filter from 'lodash/filter';
 
 import {
@@ -23,26 +25,16 @@ class SearchPage extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      sortBy: 'release_year'
-    };
-  }
-
-  handleSortBy(value) {
-    this.setState({
-      sortBy: value
-    });
+    this.state = {}
   }
 
   searchMoviesByParam(query){
+    const self = this;
     const searchQuery = queryString.parse(query);
-    let self = this;
       if(searchQuery['title']) {
         api.findMoviesByTitle(searchQuery['title'])
          .then(function(data) {  
-           self.setState({
-             movies: data.results
-           })
+           self.props.setSearch(data.results);
          })
          .catch(function(error) {
            console.log('Request failed', error);  
@@ -52,9 +44,8 @@ class SearchPage extends React.Component {
        api.findMoviesByDirectorName(searchQuery['director'])
         .then(function(data) {  
           console.log('Request succeeded with JSON response', data);
-          self.setState({
-            movies: filter(data.crew, { 'job': 'Director' })
-          })
+          self.props.setSearch(filter(data.crew, { 'job': 'Director' }));
+          console.log('store' + self.props.search)
         })
         .catch(function(error) {
           console.log('Request failed', error);  
@@ -78,9 +69,9 @@ class SearchPage extends React.Component {
 
     let searchResultBody = null;
     let moviesSorted;
-    if(this.state.movies){
-      if(this.state.movies.length > 0) {
-        moviesSorted = sortBy(this.state.movies, [this.state.sortBy]);
+    if(this.props.search.movies){
+      if(this.props.search.movies.length > 0) {
+        moviesSorted = sortBy(this.props.search.movies, [this.props.sortBy]);
         searchResultBody = <MoviesList movies={reverse(moviesSorted)}/>;
       } else {
         searchResultBody = <EmptySearch />;
@@ -95,8 +86,8 @@ class SearchPage extends React.Component {
         </Header>
         <HeaderFooter>
           <SearchNav>
-            {this.state.movies ? <SearchSum sum={this.state.movies.length}/> : ''}
-            {this.state.movies ? <SearchSort onSelectSortBy={this.handleSortBy.bind(this)}/> : ''}
+            {this.props.search.movies ? <SearchSum/> : ''}
+            {this.props.search.movies ? <SearchSort /> : ''}
           </SearchNav>
         </HeaderFooter>
         <SearchResult>
@@ -109,4 +100,15 @@ class SearchPage extends React.Component {
 
 }
 
-export default SearchPage;
+const actions = {
+  setSearch
+}
+
+function mapProps(state) {
+  return {
+    sortBy: state.sort,
+    search: state.search
+  }
+}
+
+export default connect(mapProps, actions)(SearchPage);
