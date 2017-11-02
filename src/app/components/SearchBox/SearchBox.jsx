@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { Field, reduxForm } from 'redux-form'
+import { Field, reduxForm, SubmissionError } from 'redux-form'
 
 import Button from '../Button';
 import styles from './search-box.css';
@@ -15,17 +15,26 @@ const renderRadioField = ({label, input}) => (
 class SearchBox extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      searchText: '',
-      searchBy: 'title'
-    };
   }
 
-  submit(value) {
-    this.props.history.push({
-      pathname: '/search',
-      search: value.searchBy + '=' + value.searchText
-    })
+  submit({searchText='', searchBy=''}) {
+
+    let error = {};
+    let isError = false;
+
+    if(searchText.trim() === '' || searchBy.trim() === '') {
+      isError = true;
+    }
+
+    if (isError) {
+      throw new SubmissionError(error);
+    } else {
+      this.props.history.push({
+        pathname: '/search',
+        search: searchBy + '=' + searchText
+      })
+    }
+
   }
 
   render() {
