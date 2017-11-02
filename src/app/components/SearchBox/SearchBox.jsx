@@ -1,7 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import SearchForm from './SearchForm';
+import { Field, reduxForm } from 'redux-form'
+
+import Button from '../Button';
+import styles from './search-box.css';
 
 class SearchBox extends React.Component {
   constructor(props) {
@@ -10,40 +12,52 @@ class SearchBox extends React.Component {
       searchText: '',
       searchBy: 'title'
     };
-
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleInputChange(event) {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
-
-    this.setState({
-      [name]: value
-    });
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
+  submit(value) {
     this.props.history.push({
       pathname: '/search',
-      search: this.props.form.searchBy + '=' + this.props.form.searchText
+      search: value.searchBy + '=' + value.searchText
     })
   }
 
   render() {
+    const { handleSubmit } = this.props;
     return (
-        <SearchForm onSubmit={this.handleSubmit} onChange={this.handleInputChange}/>
+      <form className = {styles.root} onSubmit={handleSubmit(this.submit.bind(this))}>
+        <label>
+          <h3 className = {styles.title}>Find your movie</h3>
+          <Field name='searchText'
+                 component='input'
+                 className = {styles.searchInput}
+                 type='search'
+                 placeholder='Search movie'/>
+        </ label>
+        <div className = {styles.switcher}>
+          <h4 className = {styles.switcherTitle}>Search by</h4>
+          <Button type='label' kind={`${this.searchBy ==='title' ? 'primary' : 'not-active'}`} className={styles.switcherBtn}>
+            Title
+            <Field type='radio'
+                   component='input'
+                   name='searchBy'
+                   value='title'/>
+          </Button>
+          <Button type='label' kind={`${this.searchBy ==='director' ? 'primary' : 'not-active'}`} className={styles.switcherBtn}>
+            Director
+            <Field type='radio'
+                   component='input'
+                   name='searchBy'
+                   value='director'/>
+          </Button>
+        </div>
+        <div className = {styles.submit}>
+          <Button type='submit' kind='primary'>Search</Button>
+        </div>
+      </form>
     );
   }
 }
 
-function mapProps(state) {
-  return {
-    form: state.form.searchForm
-  }
-}
-
-export default connect(mapProps)(withRouter(SearchBox));
+export default reduxForm({
+    form: 'search'
+})(withRouter(SearchBox));
