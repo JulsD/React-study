@@ -5,6 +5,13 @@ import { Field, reduxForm } from 'redux-form'
 import Button from '../Button';
 import styles from './search-box.css';
 
+const renderRadioField = ({label, input}) => (
+  <Button type='label' kind={`${input.checked ? 'primary' : 'not-active'}`} className={styles.switcherBtn}>
+    {label}
+    <input type='radio' {...input}/>
+  </Button>
+)
+
 class SearchBox extends React.Component {
   constructor(props) {
     super(props);
@@ -35,20 +42,16 @@ class SearchBox extends React.Component {
         </ label>
         <div className = {styles.switcher}>
           <h4 className = {styles.switcherTitle}>Search by</h4>
-          <Button type='label' kind={`${this.searchBy ==='title' ? 'primary' : 'not-active'}`} className={styles.switcherBtn}>
-            Title
-            <Field type='radio'
-                   component='input'
-                   name='searchBy'
-                   value='title'/>
-          </Button>
-          <Button type='label' kind={`${this.searchBy ==='director' ? 'primary' : 'not-active'}`} className={styles.switcherBtn}>
-            Director
-            <Field type='radio'
-                   component='input'
-                   name='searchBy'
-                   value='director'/>
-          </Button>
+          <Field type='radio'
+                 name='searchBy'
+                 value='title'
+                 component={renderRadioField}
+                 label='Title'/>
+          <Field type='radio'
+                 component={renderRadioField}
+                 name='searchBy'
+                 value='director'
+                 label='Director'/>
         </div>
         <div className = {styles.submit}>
           <Button type='submit' kind='primary'>Search</Button>
