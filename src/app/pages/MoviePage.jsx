@@ -59,7 +59,7 @@ class MoviePage extends React.Component {
   render() {
     let searchResult = 'Loading';
     if (this.props.movieInfo.movie) {
-      searchResult = <MoviesList/>;
+      searchResult = <MoviesList movies={this.props.movieInfo.moviesByDir}/>;
     }
 
     return (
