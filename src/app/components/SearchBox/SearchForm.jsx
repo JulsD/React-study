@@ -4,8 +4,8 @@ import { Field, reduxForm } from 'redux-form'
 import Button from '../Button';
 import styles from './search-box.css';
 
-let SearchForm = props => {
-  const { handleSubmit, handleInputChange } = props
+const Form = props => {
+  const { handleSubmit } = props
   return (
       <form className = {styles.root} onSubmit={handleSubmit}>
         <label>
@@ -44,8 +44,9 @@ let SearchForm = props => {
       </form>
   );
 }
-SearchForm = reduxForm({
+
+const SearchForm = reduxForm({
     form: 'searchForm'
-})(SearchForm);
+})(Form);
 
 export default SearchForm;

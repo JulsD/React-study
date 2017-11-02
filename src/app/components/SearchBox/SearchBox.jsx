@@ -42,8 +42,8 @@ class SearchBox extends React.Component {
 
 function mapProps(state) {
   return {
-    form: state.form
+    form: state.form.searchForm
   }
 }
 
-export default withRouter(connect(mapProps)(SearchBox));
+export default connect(mapProps)(withRouter(SearchBox));
