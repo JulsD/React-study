@@ -1,11 +1,10 @@
 import React from 'react';
 import sortBy from 'lodash/sortBy';
 import reverse from 'lodash/reverse';
-import * as api from '../resource/api';
 import * as queryString from 'query-string';
 import { connect } from 'react-redux';
-import { setSearch } from '../action/search';
-import filter from 'lodash/filter';
+import { searchByTitle } from '../action/searchByTitle';
+import { searchByDirector } from '../action/searchByDirector';
 
 import {
   Header,
@@ -29,27 +28,11 @@ class SearchPage extends React.Component {
   }
 
   searchMoviesByParam(query){
-    const self = this;
     const searchQuery = queryString.parse(query);
       if(searchQuery['title']) {
-        api.findMoviesByTitle(searchQuery['title'])
-         .then(function(data) {  
-           self.props.setSearch(data.results);
-         })
-         .catch(function(error) {
-           console.log('Request failed', error);  
-         });
-
+        this.props.searchByTitle(searchQuery['title']);
      } else if (searchQuery['director']) {
-       api.findMoviesByDirectorName(searchQuery['director'])
-        .then(function(data) {  
-          console.log('Request succeeded with JSON response', data);
-          self.props.setSearch(filter(data.crew, { 'job': 'Director' }));
-          console.log('store' + self.props.search)
-        })
-        .catch(function(error) {
-          console.log('Request failed', error);  
-        });
+       this.props.searchByDirector(searchQuery['director']);
      } else {
        return;
      }
@@ -100,8 +83,12 @@ class SearchPage extends React.Component {
 
 }
 
-const actions = {
-  setSearch
+
+function actions(dispatch){
+  return {
+    searchByTitle: (...params) => dispatch(searchByTitle(params)),
+    searchByDirector: (...params) => dispatch(searchByDirector(params))
+  }
 }
 
 function mapProps(state) {

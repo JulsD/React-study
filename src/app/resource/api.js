@@ -37,7 +37,7 @@ function findDirectorId(searchQuery) {
   return fetch(url)  
     .then(status)  
     .then(json)
-    .then(function(data) {  
+    .then(function(data) {
       return data.results[0].id;
     });
 }
