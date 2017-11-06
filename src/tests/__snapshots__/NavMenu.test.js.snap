@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavMenu should render a <ul> 1`] = `
+<ul
+  className="root"
+>
+  <li
+    key="Search"
+  >
+    <Button
+      kind="default"
+      to="/"
+      type="link"
+    >
+      Search
+    </Button>
+  </li>
+</ul>
+`;
