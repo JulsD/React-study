@@ -3,8 +3,7 @@ import sortBy from 'lodash/sortBy';
 import reverse from 'lodash/reverse';
 import * as queryString from 'query-string';
 import { connect } from 'react-redux';
-import { searchByTitle } from '../action/searchByTitle';
-import { searchByDirector } from '../action/searchByDirector';
+import { searchByTitle, searchByDirector } from '../action';
 
 import {
   Header,
