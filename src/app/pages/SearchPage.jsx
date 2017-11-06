@@ -16,7 +16,8 @@ import {
   SearchSort,
   SearchSum,
   MoviesList,
-  EmptySearch
+  EmptySearch,
+  Loader
 } from './../components';
 
 class SearchPage extends React.Component {
@@ -50,14 +51,14 @@ class SearchPage extends React.Component {
   render() {
 
     let searchResultBody = null;
-    let moviesSorted;
-    if(this.props.search.movies){
+    if(this.props.search.movies && !this.props.isLoading){
       if(this.props.search.movies.length > 0) {
-        moviesSorted = sortBy(this.props.search.movies, [this.props.sortBy]);
-        searchResultBody = <MoviesList movies={reverse(moviesSorted)}/>;
+        searchResultBody = <MoviesList movies={reverse(sortBy(this.props.search.movies, [this.props.sortBy]))}/>;
       } else {
         searchResultBody = <EmptySearch />;
       }
+    } else if (this.props.isLoading) {
+      searchResultBody = <Loader />
     }
 
     return (
@@ -93,7 +94,8 @@ function actions(dispatch){
 function mapProps(state) {
   return {
     sortBy: state.sort,
-    search: state.search
+    search: state.search,
+    isLoading: state.isLoading.search
   }
 }
 

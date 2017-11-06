@@ -4,6 +4,7 @@ import {default as Header} from './Header';
 import {default as HeaderFooter} from './HeaderFooter';
 import {default as HeaderNav} from './HeaderNav';
 import {default as Logo} from './Logo';
+import {default as Loader} from './Loader';
 import {default as MovieBox} from './MovieBox';
 import {default as MovieInfo} from './MovieInfo';
 import {default as MovieItem} from './MovieItem';
@@ -24,6 +25,7 @@ export {
   HeaderFooter,
   HeaderNav,
   Logo,
+  Loader,
   MovieBox,
   MovieInfo,
   MovieItem,

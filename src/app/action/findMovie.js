@@ -1,9 +1,10 @@
 import * as api from '../resource/api';
-import { setMovie } from '../action/setMovie';
+import { setMovie, setLoadingMovie } from '../action';
 import filter from 'lodash/filter';
 
 export function findMovie(movieId){
   return (dispatch) => {
+    dispatch(setLoadingMovie(true));
     let movie;
     api.getMovieById(movieId)
      .then(function(result) {
@@ -20,9 +21,11 @@ export function findMovie(movieId){
            movie,
            moviesByDir: filter(data.crew, { 'job': 'Director' })
          }));
+         dispatch(setLoadingMovie(false));
        })         
      .catch(function(error) {
        console.log('Request failed', error);  
+       dispatch(setLoadingMovie(false));
      });
   }
 }

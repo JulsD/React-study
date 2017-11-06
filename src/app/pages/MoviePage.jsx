@@ -11,7 +11,8 @@ import {
   HeaderFooter,
   MovieInfo,
   NavMenu,
-  MoviesList
+  MoviesList,
+  Loader
 } from './../components';
 
 class MoviePage extends React.Component {
@@ -36,24 +37,19 @@ class MoviePage extends React.Component {
   }
 
   render() {
-    let searchResult = 'Loading';
-    if (this.props.movieInfo.movie) {
-      searchResult = <MoviesList movies={this.props.movieInfo.moviesByDir}/>;
-    }
-
     return (
       <div>
         <Header>
           <HeaderNav>
             <NavMenu menu={['Search']}/>
           </HeaderNav>
-          { this.props.movieInfo.movie ?  <MovieBox/>  : searchResult }
+          { this.props.movieInfo.movie ?  <MovieBox/>  : (this.props.isLoading ? <Loader /> : '')}
         </Header>
         <HeaderFooter>
-          { this.props.movieInfo.movie ?  <MovieInfo/>  : searchResult }
+          { this.props.movieInfo.movie ?  <MovieInfo/>  : (this.props.isLoading ? <Loader /> : '') }
         </HeaderFooter>
         <SearchResult>
-          {searchResult}
+          {this.props.movieInfo.movie ? <MoviesList movies={this.props.movieInfo.moviesByDir}/> : (this.props.isLoading ? <Loader /> : '')}
         </SearchResult>
         <Footer />
       </div>
@@ -70,7 +66,8 @@ function actions(dispatch){
 
 function mapProps(state) {
   return {
-    movieInfo: state.movie
+    movieInfo: state.movie,
+    isLoading: state.isLoading.movie
   }
 }
 
