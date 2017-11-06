@@ -1,4 +1,4 @@
-export function setSort(value){
+export function setSortBy(value){
   return {
     type: 'SET_SORT',
     payload: value

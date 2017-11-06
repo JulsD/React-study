@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { setSort } from '../../action/sort'
+import { setSortBy } from '../../action'
 
 import styles from './search-sort.css';
 
@@ -15,7 +15,7 @@ class SearchSort extends React.Component {
   handleInputChange(event) {
     let target = event.target;
     let value = target.value;
-    this.props.setSort(value);
+    this.props.setSortBy(value);
   }
 
   render() {
@@ -45,7 +45,7 @@ class SearchSort extends React.Component {
 }
 
 const actions = {
-  setSort
+  setSortBy
 }
 
 function mapProps(state) {

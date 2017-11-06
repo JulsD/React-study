@@ -1,11 +1,11 @@
 import * as api from '../resource/api';
-import { setSearch } from '../action/search';
+import { setMovieList } from '../action';
 
 export function searchByTitle(title){
   return (dispatch) => {
     api.findMoviesByTitle(title)
     .then(function(data) {  
-      dispatch(setSearch(data.results));
+      dispatch(setMovieList(data.results));
     })
     .catch(function(error) {
       console.log('Request failed', error);  

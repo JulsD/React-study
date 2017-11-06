@@ -1,5 +1,5 @@
 import * as api from '../resource/api';
-import { setMovie } from '../action/movie';
+import { setMovie } from '../action/setMovie';
 import filter from 'lodash/filter';
 
 export function findMovie(movieId){
