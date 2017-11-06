@@ -1,8 +1,6 @@
 import React from 'react';
-import * as api from '../resource/api';
-import filter from 'lodash/filter';
 import { connect } from 'react-redux';
-import { setMovie } from '../action/movie';
+import { findMovie } from '../action';
 
 import {
   Header,
@@ -24,26 +22,7 @@ class MoviePage extends React.Component {
   }
 
   searchMovieById(movieId){
-    let movie, self = this;
-    api.getMovieById(movieId)
-     .then(function(result) {
-       movie = result;
-       return api.findMovieDirectorAndActors(movieId)
-     })
-     .then(function(result) {
-         movie.actors = result.cast;
-         movie.director = filter(result.crew, { 'job': 'Director' });
-         return api.findMoviesByDirectorName(movie.director[0].name);
-       })
-       .then(function(data) {
-         self.props.setMovie({
-           movie,
-           moviesByDir: filter(data.crew, { 'job': 'Director' })
-         })
-       })         
-     .catch(function(error) {
-       console.log('Request failed', error);  
-     });
+    this.props.findMovie(movieId);
   }
 
   componentDidMount (){
@@ -83,8 +62,10 @@ class MoviePage extends React.Component {
 
 }
 
-const actions = {
-  setMovie
+function actions(dispatch){
+  return {
+    findMovie: (...params) => dispatch(findMovie(params))
+  }
 }
 
 function mapProps(state) {
