@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo should render a <div> 1`] = `
+<div
+  className="root"
+>
+  <Link
+    replace={false}
+    to="/"
+  >
+    netflixroulette
+  </Link>
+</div>
+`;

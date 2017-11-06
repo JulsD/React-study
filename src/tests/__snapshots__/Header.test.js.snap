@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render a <header> 1`] = `
+<header
+  className="root"
+>
+  <Wrapper />
+</header>
+`;

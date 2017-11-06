@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchNav should render a <nav> 1`] = `
+<nav
+  className="root"
+/>
+`;

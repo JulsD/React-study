@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResult should render a <nav> 1`] = `
+<div>
+  <Wrapper />
+</div>
+`;

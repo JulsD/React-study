@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderNav should render a <nav> 1`] = `
+<nav
+  className="root"
+>
+  <Logo />
+</nav>
+`;
