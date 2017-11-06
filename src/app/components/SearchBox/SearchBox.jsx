@@ -71,5 +71,9 @@ class SearchBox extends React.Component {
 }
 
 export default reduxForm({
-    form: 'search'
+    form: 'search',
+    initialValues: {
+      searchText: '',
+      searchBy: 'title'
+    }
 })(withRouter(SearchBox));
