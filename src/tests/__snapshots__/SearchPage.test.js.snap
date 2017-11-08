@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo should render a <div> 1`] = `
+<div>
+  <Header>
+    <Nav />
+    <ReduxForm />
+  </Header>
+  <HeaderFooter>
+    <SearchNav />
+  </HeaderFooter>
+  <SearchResult />
+  <Footer />
+</div>
+`;

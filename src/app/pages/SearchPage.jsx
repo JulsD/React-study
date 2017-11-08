@@ -20,7 +20,7 @@ import {
   Loader
 } from './../components';
 
-class SearchPage extends React.Component {
+export class SearchPage extends React.Component {
 
   constructor(props) {
     super(props);

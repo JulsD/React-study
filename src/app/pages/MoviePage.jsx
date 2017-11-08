@@ -15,7 +15,7 @@ import {
   Loader
 } from './../components';
 
-class MoviePage extends React.Component {
+export class MoviePage extends React.Component {
 
   constructor(props) {
     super(props);
