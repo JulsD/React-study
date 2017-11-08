@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-class MovieInfo extends React.Component {
+export class MovieInfo extends React.Component {
 
   constructor(props) {
     super(props);

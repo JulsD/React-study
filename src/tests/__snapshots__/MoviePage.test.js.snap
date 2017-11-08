@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo should render a <div> 1`] = `
+<div>
+  <Header>
+    <Nav>
+      <NavMenu
+        menu={
+          Array [
+            "Search",
+          ]
+        }
+      />
+    </Nav>
+    <Connect(MovieBox) />
+  </Header>
+  <HeaderFooter>
+    <Connect(MovieInfo) />
+  </HeaderFooter>
+  <SearchResult>
+    <MoviesList
+      movies={
+        Array [
+          1,
+          2,
+        ]
+      }
+    />
+  </SearchResult>
+  <Footer />
+</div>
+`;

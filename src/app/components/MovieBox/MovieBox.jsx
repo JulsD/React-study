@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import styles from './movie-box.css';
 
-class MovieBox extends React.Component {
+export class MovieBox extends React.Component {
 
   constructor(props) {
     super(props);

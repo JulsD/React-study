@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchSort should render a <nav> 1`] = `
+<div
+  className="root"
+>
+  <h4>
+    Sort by
+  </h4>
+  <label
+    className=""
+  >
+    release date
+    <input
+      checked={false}
+      name="sortBy"
+      onChange={[Function]}
+      type="radio"
+      value="release_date"
+    />
+  </label>
+  <label
+    className=""
+  >
+    rating
+    <input
+      checked={false}
+      name="sortBy"
+      onChange={[Function]}
+      type="radio"
+      value="vote_average"
+    />
+  </label>
+</div>
+`;

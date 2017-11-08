@@ -4,7 +4,7 @@ import { setSortBy } from '../../action'
 
 import styles from './search-sort.css';
 
-class SearchSort extends React.Component {
+export class SearchSort extends React.Component {
 
   constructor(props) {
     super(props);

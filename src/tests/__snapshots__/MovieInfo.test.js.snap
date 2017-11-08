@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieInfo should render a <div> 1`] = `
+<div>
+  Films by
+  <span
+    key="1"
+  >
+    <i>
+       
+    </i>
+    test
+  </span>
+  <span
+    key="2"
+  >
+    <i>
+       
+    </i>
+    test
+  </span>
+  <span
+    key="3"
+  >
+    <i>
+       
+    </i>
+    test
+  </span>
+</div>
+`;

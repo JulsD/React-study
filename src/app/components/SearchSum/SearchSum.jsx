@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-class SearchSum extends React.Component {
+export class SearchSum extends React.Component {
 
   constructor(props) {
     super(props);

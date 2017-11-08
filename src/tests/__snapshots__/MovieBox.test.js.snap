@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieBox should render a <div> 1`] = `
+<div
+  className="root"
+>
+  <div
+    className="coverWrapper"
+  >
+    <div
+      className="cover"
+    >
+      <div
+        style={
+          Object {
+            "backgroundImage": "url(https://image.tmdb.org/t/p/w500test)",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="details"
+  >
+    <div
+      className="row"
+    >
+      <h2
+        className="title"
+      >
+        test
+      </h2>
+      <div
+        className="rate"
+      >
+        <span>
+          1
+        </span>
+      </div>
+      <p
+        className="genre"
+      >
+        <span
+          key="1"
+        >
+          test
+           
+        </span>
+        <span
+          key="2"
+        >
+          test
+           
+        </span>
+      </p>
+      <div
+        className="numb"
+      >
+        test
+      </div>
+      <div
+        className="numb"
+      >
+        test
+         min
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <p
+        className="description"
+      >
+        test
+      </p>
+    </div>
+    <div
+      className="additional"
+    >
+      <p>
+        <span
+          key="1"
+        >
+          test
+          <i>
+            , 
+          </i>
+        </span>
+        <span
+          key="2"
+        >
+          test
+          <i>
+            , 
+          </i>
+        </span>
+      </p>
+      <p>
+        <span
+          key="1"
+        >
+          test
+          <i>
+            , 
+          </i>
+        </span>
+        <span
+          key="2"
+        >
+          test
+          <i>
+            , 
+          </i>
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchSum should render a <nav> 1`] = `
+<p>
+  3 movies found
+</p>
+`;
