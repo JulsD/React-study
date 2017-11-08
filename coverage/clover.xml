@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1510182759479" clover="3.2.0">
+  <project timestamp="1510182759479" name="All files">
+    <metrics statements="189" coveredstatements="109" conditionals="81" coveredconditionals="34" methods="98" coveredmethods="56" elements="368" coveredelements="199" complexity="0" loc="189" ncloc="189" packages="25" files="56" classes="56">
+      <package name="app.action">
+        <metrics statements="31" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="19" coveredmethods="5"/>
+        <file name="findMovie.js" path="/Users/uliadutcak/Documents/IT/React-study/src/app/action/findMovie.js">
+          <metrics statements="12" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="9" count="0" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="12" count="0" type="stmt"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="16" count="0" type="stmt"/>
+          <line num="17" count="0" type="stmt"/>
+          <line num="20" count="0" type="stmt"/>
+          <line num="24" count="0" type="stmt"/>
+          <line num="27" count="0" type="stmt"/>
+          <line num="28" count="0" type="stmt"/>
+        </file>
+        <file name="index.js" path="/Users/uliadutcak/Documents/IT/React-study/src/app/action/index.js">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+        <file name="searchByDirector.js" path="/Users/uliadutcak/Documents/IT/React-study/src/app/action/searchByDirector.js">
+          <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="14" count="0" type="stmt"/>
+          <line num="15" count="0" type="stmt"/>
+        </file>
+        <file name="searchByTitle.js" path="/Users/uliadutcak/Documents/IT/React-study/src/app/action/searchByTitle.js">
+          <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+          <line num="5" count="0" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="9" count="0" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="13" count="0" type="stmt"/>
+          <line num="14" count="0" type="stmt"/>
+        </file>
+        <file name="setLoadingMovie.js" path="/Users/uliadutcak/Documents/IT/React-study/src/app/action/setLoadingMovie.js">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="2" count="1" type="stmt"/>
+        </file>
+        <file name="setLoadingSearch.js" path="/Users/uliadutcak/Documents/IT/React-study/src/app/action/setLoadingSearch.js">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="2" count="1" type="stmt"/>
+        </file>
+        <file name="setMovie.js" path="/Users/uliadutcak/Documents/IT/React-study/src/app/action/setMovie.js">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="2" count="1" type="stmt"/>
+        </file>
+        <file name="setMovieList.js" path="/Users/uliadutcak/Documents/IT/React-study/src/app/action/setMovieList.js">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="2" count="1" type="stmt"/>
+        </file>
+        <file name="setSortBy.js" path="/Users/uliadutcak/Documents/IT/React-study/src/app/action/setSortBy.js">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="2" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="app.components">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <file name="index.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/index.jsx">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="app.components.Button">
+        <metrics statements="11" coveredstatements="11" conditionals="10" coveredconditionals="10" methods="2" coveredmethods="2"/>
+        <file name="Button.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/Button/Button.jsx">
+          <metrics statements="11" coveredstatements="11" conditionals="10" coveredconditionals="10" methods="2" coveredmethods="2"/>
+          <line num="8" count="6" type="stmt"/>
+          <line num="13" count="6" type="stmt"/>
+          <line num="20" count="6" type="cond" truecount="4" falsecount="0"/>
+          <line num="21" count="1" type="stmt"/>
+          <line num="26" count="5" type="cond" truecount="2" falsecount="0"/>
+          <line num="27" count="2" type="stmt"/>
+          <line num="32" count="3" type="cond" truecount="2" falsecount="0"/>
+          <line num="33" count="1" type="stmt"/>
+          <line num="38" count="2" type="cond" truecount="2" falsecount="0"/>
+          <line num="39" count="1" type="stmt"/>
+          <line num="45" count="1" type="stmt"/>
+        </file>
+        <file name="index.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/Button/index.jsx">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="app.components.EmptySearch">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <file name="EmptySearch.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/EmptySearch/EmptySearch.jsx">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="8" count="1" type="stmt"/>
+        </file>
+        <file name="index.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/EmptySearch/index.jsx">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="app.components.Footer">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <file name="Footer.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/Footer/Footer.jsx">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="14" count="1" type="stmt"/>
+        </file>
+        <file name="index.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/Footer/index.jsx">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="app.components.Header">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <file name="Header.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/Header/Header.jsx">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="13" count="1" type="stmt"/>
+        </file>
+        <file name="index.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/Header/index.jsx">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="app.components.HeaderFooter">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <file name="HeaderFooter.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/HeaderFooter/HeaderFooter.jsx">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="13" count="1" type="stmt"/>
+        </file>
+        <file name="index.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/HeaderFooter/index.jsx">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="app.components.HeaderNav">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <file name="HeaderNav.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/HeaderNav/HeaderNav.jsx">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="14" count="1" type="stmt"/>
+        </file>
+        <file name="index.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/HeaderNav/index.jsx">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="app.components.Loader">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <file name="Loader.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/Loader/Loader.jsx">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="7" count="1" type="stmt"/>
+        </file>
+        <file name="index.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/Loader/index.jsx">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="app.components.Logo">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <file name="Logo.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/Logo/Logo.jsx">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="8" count="1" type="stmt"/>
+        </file>
+        <file name="index.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/Logo/index.jsx">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="app.components.MovieBox">
+        <metrics statements="10" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="6" coveredmethods="5"/>
+        <file name="MovieBox.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/MovieBox/MovieBox.jsx">
+          <metrics statements="10" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="6" coveredmethods="5"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="14" count="1" type="stmt"/>
+          <line num="15" count="1" type="stmt"/>
+          <line num="16" count="1" type="cond" truecount="1" falsecount="1"/>
+          <line num="17" count="1" type="stmt"/>
+          <line num="33" count="2" type="stmt"/>
+          <line num="43" count="2" type="stmt"/>
+          <line num="46" count="2" type="stmt"/>
+          <line num="58" count="0" type="stmt"/>
+        </file>
+        <file name="index.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/MovieBox/index.jsx">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="app.components.MovieInfo">
+        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+        <file name="MovieInfo.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/MovieInfo/MovieInfo.jsx">
+          <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="14" count="3" type="stmt"/>
+          <line num="22" count="0" type="stmt"/>
+        </file>
+        <file name="index.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/MovieInfo/index.jsx">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="app.components.MovieItem">
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <file name="MovieItem.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/MovieItem/MovieItem.jsx">
+          <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="12" count="1" type="stmt"/>
+          <line num="16" count="1" type="stmt"/>
+          <line num="17" count="1" type="stmt"/>
+          <line num="18" count="1" type="cond" truecount="1" falsecount="1"/>
+          <line num="19" count="1" type="stmt"/>
+          <line num="20" count="1" type="stmt"/>
+        </file>
+        <file name="index.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/MovieItem/index.jsx">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="app.components.MoviesList">
+        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
+        <file name="MoviesList.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/MoviesList/MoviesList.jsx">
+          <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="13" count="1" type="cond" truecount="1" falsecount="1"/>
+          <line num="14" count="1" type="stmt"/>
+          <line num="15" count="3" type="stmt"/>
+          <line num="17" count="1" type="stmt"/>
+        </file>
+        <file name="index.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/MoviesList/index.jsx">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="app.components.NavMenu">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <file name="NavMenu.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/NavMenu/NavMenu.jsx">
+          <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="14" count="1" type="stmt"/>
+          <line num="15" count="1" type="stmt"/>
+          <line num="16" count="1" type="stmt"/>
+          <line num="20" count="1" type="stmt"/>
+        </file>
+        <file name="index.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/NavMenu/index.jsx">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="app.components.SearchBox">
+        <metrics statements="12" coveredstatements="1" conditionals="10" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <file name="SearchBox.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/SearchBox/SearchBox.jsx">
+          <metrics statements="12" coveredstatements="1" conditionals="10" coveredconditionals="0" methods="4" coveredmethods="0"/>
+          <line num="8" count="3" type="stmt"/>
+          <line num="9" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="17" count="0" type="stmt"/>
+          <line num="22" count="0" type="stmt"/>
+          <line num="23" count="0" type="stmt"/>
+          <line num="25" count="0" type="cond" truecount="0" falsecount="4"/>
+          <line num="26" count="0" type="stmt"/>
+          <line num="29" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="30" count="0" type="stmt"/>
+          <line num="32" count="0" type="stmt"/>
+          <line num="41" count="0" type="stmt"/>
+          <line num="42" count="0" type="stmt"/>
+        </file>
+        <file name="index.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/SearchBox/index.jsx">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="app.components.SearchNav">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <file name="SearchNav.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/SearchNav/SearchNav.jsx">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="12" count="1" type="stmt"/>
+        </file>
+        <file name="index.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/SearchNav/index.jsx">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="app.components.SearchResult">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <file name="SearchResult.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/SearchResult/SearchResult.jsx">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="13" count="1" type="stmt"/>
+        </file>
+        <file name="index.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/SearchResult/index.jsx">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="app.components.SearchSort">
+        <metrics statements="8" coveredstatements="4" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="2"/>
+        <file name="SearchSort.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/SearchSort/SearchSort.jsx">
+          <metrics statements="8" coveredstatements="4" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="2"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="12" count="1" type="stmt"/>
+          <line num="16" count="0" type="stmt"/>
+          <line num="17" count="0" type="stmt"/>
+          <line num="18" count="0" type="stmt"/>
+          <line num="22" count="1" type="stmt"/>
+          <line num="47" count="3" type="stmt"/>
+          <line num="52" count="0" type="stmt"/>
+        </file>
+        <file name="index.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/SearchSort/index.jsx">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="app.components.SearchSum">
+        <metrics statements="4" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
+        <file name="SearchSum.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/SearchSum/SearchSum.jsx">
+          <metrics statements="4" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="11" count="1" type="cond" truecount="1" falsecount="1"/>
+          <line num="12" count="1" type="stmt"/>
+          <line num="22" count="0" type="stmt"/>
+        </file>
+        <file name="index.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/SearchSum/index.jsx">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="app.components.Wrapper">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <file name="Wrapper.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/Wrapper/Wrapper.jsx">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
+        </file>
+        <file name="index.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/components/Wrapper/index.jsx">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="app.pages">
+        <metrics statements="33" coveredstatements="16" conditionals="32" coveredconditionals="10" methods="17" coveredmethods="8"/>
+        <file name="MoviePage.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/pages/MoviePage.jsx">
+          <metrics statements="10" coveredstatements="5" conditionals="14" coveredconditionals="3" methods="8" coveredmethods="4"/>
+          <line num="21" count="1" type="stmt"/>
+          <line num="22" count="1" type="stmt"/>
+          <line num="26" count="1" type="stmt"/>
+          <line num="30" count="1" type="stmt"/>
+          <line num="34" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="35" count="0" type="stmt"/>
+          <line num="40" count="1" type="stmt"/>
+          <line num="62" count="0" type="stmt"/>
+          <line num="63" count="0" type="stmt"/>
+          <line num="68" count="0" type="stmt"/>
+        </file>
+        <file name="SearchPage.jsx" path="/Users/uliadutcak/Documents/IT/React-study/src/app/pages/SearchPage.jsx">
+          <metrics statements="23" coveredstatements="11" conditionals="18" coveredconditionals="7" methods="9" coveredmethods="4"/>
+          <line num="26" count="1" type="stmt"/>
+          <line num="27" count="1" type="stmt"/>
+          <line num="31" count="1" type="stmt"/>
+          <line num="32" count="1" type="cond" truecount="1" falsecount="1"/>
+          <line num="33" count="0" type="stmt"/>
+          <line num="34" count="1" type="cond" truecount="1" falsecount="1"/>
+          <line num="35" count="0" type="stmt"/>
+          <line num="37" count="1" type="stmt"/>
+          <line num="42" count="1" type="stmt"/>
+          <line num="46" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="47" count="0" type="stmt"/>
+          <line num="53" count="1" type="stmt"/>
+          <line num="54" count="1" type="cond" truecount="2" falsecount="2"/>
+          <line num="55" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="56" count="0" type="stmt"/>
+          <line num="58" count="0" type="stmt"/>
+          <line num="60" count="1" type="cond" truecount="1" falsecount="1"/>
+          <line num="61" count="0" type="stmt"/>
+          <line num="64" count="1" type="stmt"/>
+          <line num="88" count="0" type="stmt"/>
+          <line num="89" count="0" type="stmt"/>
+          <line num="90" count="0" type="stmt"/>
+          <line num="95" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="app.reducers">
+        <metrics statements="17" coveredstatements="16" conditionals="13" coveredconditionals="8" methods="4" coveredmethods="4"/>
+        <file name="isLoading.js" path="/Users/uliadutcak/Documents/IT/React-study/src/app/reducers/isLoading.js">
+          <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="7" count="3" type="cond" truecount="3" falsecount="0"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="13" count="1" type="stmt"/>
+          <line num="17" count="1" type="stmt"/>
+        </file>
+        <file name="movie.js" path="/Users/uliadutcak/Documents/IT/React-study/src/app/reducers/movie.js">
+          <metrics statements="4" coveredstatements="4" conditionals="3" coveredconditionals="2" methods="1" coveredmethods="1"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="4" count="2" type="cond" truecount="2" falsecount="0"/>
+          <line num="6" count="1" type="stmt"/>
+          <line num="8" count="1" type="stmt"/>
+        </file>
+        <file name="search.js" path="/Users/uliadutcak/Documents/IT/React-study/src/app/reducers/search.js">
+          <metrics statements="4" coveredstatements="4" conditionals="3" coveredconditionals="2" methods="1" coveredmethods="1"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="4" count="2" type="cond" truecount="2" falsecount="0"/>
+          <line num="6" count="1" type="stmt"/>
+          <line num="10" count="1" type="stmt"/>
+        </file>
+        <file name="sort.js" path="/Users/uliadutcak/Documents/IT/React-study/src/app/reducers/sort.js">
+          <metrics statements="4" coveredstatements="3" conditionals="3" coveredconditionals="1" methods="1" coveredmethods="1"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="4" count="2" type="cond" truecount="1" falsecount="1"/>
+          <line num="6" count="2" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="app.resource">
+        <metrics statements="19" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="9" coveredmethods="0"/>
+        <file name="api.js" path="/Users/uliadutcak/Documents/IT/React-study/src/app/resource/api.js">
+          <metrics statements="19" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="9" coveredmethods="0"/>
+          <line num="3" count="4" type="stmt"/>
+          <line num="4" count="4" type="stmt"/>
+          <line num="7" count="0" type="cond" truecount="0" falsecount="4"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="19" count="0" type="stmt"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="27" count="0" type="stmt"/>
+          <line num="29" count="0" type="stmt"/>
+          <line num="35" count="0" type="stmt"/>
+          <line num="37" count="0" type="stmt"/>
+          <line num="41" count="0" type="stmt"/>
+          <line num="46" count="0" type="stmt"/>
+          <line num="48" count="0" type="stmt"/>
+          <line num="51" count="0" type="stmt"/>
+          <line num="52" count="0" type="stmt"/>
+          <line num="59" count="0" type="stmt"/>
+          <line num="61" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="tests">
+        <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <file name="jestsetup.js" path="/Users/uliadutcak/Documents/IT/React-study/src/tests/jestsetup.js">
+          <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="4" count="24" type="stmt"/>
+          <line num="6" count="24" type="stmt"/>
+          <line num="7" count="24" type="stmt"/>
+          <line num="8" count="24" type="stmt"/>
+          <line num="10" count="24" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+        </file>
+      </package>
+    </metrics>
+  </project>
+</coverage>
