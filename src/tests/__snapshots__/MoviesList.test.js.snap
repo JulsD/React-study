@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoviesList should render a <Link> 1`] = `
+<div
+  className="root"
+>
+  <MovieItem
+    key="1"
+    movie={
+      Object {
+        "id": 1,
+      }
+    }
+  />
+  <MovieItem
+    key="2"
+    movie={
+      Object {
+        "id": 2,
+      }
+    }
+  />
+  <MovieItem
+    key="3"
+    movie={
+      Object {
+        "id": 3,
+      }
+    }
+  />
+</div>
+`;

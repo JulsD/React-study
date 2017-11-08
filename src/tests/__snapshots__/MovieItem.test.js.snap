@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieItem should render a <Link> 1`] = `
+<Link
+  replace={false}
+  to="/movie/test?title=test"
+>
+  <div
+    className="root"
+  >
+    <div
+      className="cover"
+    >
+      <div
+        style={
+          Object {
+            "backgroundImage": "url(https://image.tmdb.org/t/p/w500test)",
+          }
+        }
+      />
+    </div>
+    <div
+      className="details"
+    >
+      <div
+        className="title"
+      >
+        test
+      </div>
+      <Button
+        kind="informative"
+      >
+        test
+      </Button>
+      <div
+        className="genre"
+      >
+        test
+         rate
+      </div>
+    </div>
+  </div>
+</Link>
+`;
