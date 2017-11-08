@@ -1,6 +1,6 @@
 const defaultMovie = {};
 
-export default function search(state = defaultMovie, action) {
+export default function movie(state = defaultMovie, action) {
   switch (action.type) {
     case 'SET_MOVIE':
       return action.payload;
