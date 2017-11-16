@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-dom';
+import { hydrate } from 'react-dom';
 import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
 import { BrowserRouter } from 'react-router-dom';
@@ -13,7 +13,7 @@ import App from './app/index.jsx';
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 
-render((
+hydrate((
   <Provider store={store}>
     <AppContainer>
       <BrowserRouter>

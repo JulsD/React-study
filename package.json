@@ -11,7 +11,7 @@
     "prestart": "npm i",
     "start": "npm run serve",
     "build:prod": "webpack -p",
-    "serve:prod": "node server/app.js",
+    "serve:prod": "babel-node server/index.js",
     "prestart:prod": "npm i && run build:prod",
     "start:prod": "npm run serve:prod",
     "test": "jest",
@@ -54,6 +54,7 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-polyfill": "^6.26.0",
