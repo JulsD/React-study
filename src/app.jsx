@@ -3,15 +3,13 @@ import { hydrate } from 'react-dom';
 import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
 import { BrowserRouter } from 'react-router-dom';
-import { createStore, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import rootReducer from './app/reducers';
-import thunk from 'redux-thunk';
+import configureStore from './app/configureStore';
 
 import './styles/common.css';
 import App from './app/index.jsx';
 
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
+const store = configureStore(window.PRELOADED_STATE);
+delete window.PRELOADED_STATE;
 
 hydrate((
   <Provider store={store}>
