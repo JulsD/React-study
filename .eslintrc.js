@@ -37,7 +37,7 @@ module.exports = {
   ],
   "overrides": [
     {
-      files: ["*.config.js", "server/*"],
+      files: ["*.config.js", "server/*", "server.js"],
       "env": {
         "node": true,
         "browser": false
