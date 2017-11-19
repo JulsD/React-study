@@ -11,9 +11,7 @@
     "prestart": "npm i",
     "start": "npm run serve",
     "build:prod": "webpack -p",
-    "serve:prod": "babel-node server/index.js",
-    "prestart:prod": "npm i && run build:prod",
-    "start:prod": "npm run serve:prod",
+    "ssr": "NODE_ENV=production node server.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
