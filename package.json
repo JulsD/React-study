@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "eslint": "eslint",
+
     "build": "webpack",
     "build:watch": "webpack -d --watch",
     "serve": "webpack-dev-server --progress --hot --colors --config ./webpack.config.js",
-    "prestart": "npm i",
-    "start": "npm run serve",
+
     "build:prod": "webpack -p",
-    "ssr": "NODE_ENV=production node server.js",
+    "serve:prod": "babel-node server/index.js",
+    "prestart": "npm i && npm run build:prod",
+    "start": "npm run serve:prod",
+
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
