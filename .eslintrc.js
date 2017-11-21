@@ -42,6 +42,11 @@ module.exports = {
         "node": true,
         "browser": false
       }
+    },{
+    files: ["src/tests/*"],
+      "env": {
+        "jest": true
+      }
     }
   ]
 };
