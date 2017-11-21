@@ -10,4 +10,5 @@ server.get('/*', handleRender);
 
 server.listen(port,  () => {
   console.log(`Exprass listning on port ${port}`);
+  console.log(`http://localhost:${port}`);
 });
