@@ -5,16 +5,13 @@
   "main": "index.js",
   "scripts": {
     "eslint": "eslint",
-
     "build": "webpack",
     "build:watch": "webpack -d --watch",
     "serve": "webpack-dev-server --progress --hot --colors --config ./webpack.config.js",
-
     "build:prod": "webpack -p",
-    "serve:prod": "babel-node server/index.js",
+    "serve:prod": "babel-node --plugins css-modules-transform server/index.js",
     "prestart": "npm i && npm run build:prod",
     "start": "npm run serve:prod",
-
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
@@ -58,6 +55,7 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-css-modules-transform": "^1.2.8",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
