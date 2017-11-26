@@ -2,27 +2,24 @@ import React from 'react'
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import 'isomorphic-fetch';
+import fs from 'fs';
 
 import App from '../src/app/components/Wrapper';
 import configureStor from '../src/app/configureStore';
 
+const path = require('path');
+const index  = fs.readFileSync(path.resolve(__dirname, '../dist/index.html'), 'utf-8');
+
 function renderFullPage(html, preloadedState){
-  return `
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title>React App</title>
-        <meta charset="utf-8">
-      </head>
-      <body>
-        <div id="app">${html}</div>
-        <script>
-          window.PRELOADED_STATE = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
-        </script>
-        <script type="text/javascript" src="bundle.js"></script>
-      </body>
-    </html>
+  const preloadedStateHtml = `
+    <script>
+      window.PRELOADED_STATE = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
+    </script>
   `;
+  const middleHtml = index.replace('<!--:: APP ::-->', html);
+  const finalHtml = middleHtml.replace('<!--:: PRELOADED_STATE ::-->', preloadedStateHtml);
+  return finalHtml;
 }
 
 function handleRender(req, res){
