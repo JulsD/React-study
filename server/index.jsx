@@ -3,12 +3,15 @@ import handleRender from './handleRender';
 
 const path = require('path');
 const port = 8000;
-const server = express();
+const app = express();
 
-server.use(express.static(path.join(__dirname, '../dist')));
-server.get('/*', handleRender);
+app.use(express.static(path.resolve(__dirname, '/dist')));
 
-server.listen(port,  () => {
+app.get('/', handleRender);
+app.get('/search', handleRender);
+app.get('/movie', handleRender);
+
+app.listen( port,  () => {
   console.log(`Exprass listning on port ${port}`);
   console.log(`http://localhost:${port}`);
 });

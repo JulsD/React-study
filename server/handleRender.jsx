@@ -5,11 +5,11 @@ import { Provider } from 'react-redux';
 import 'isomorphic-fetch';
 import fs from 'fs';
 
-import App from '../src/app/components/Wrapper';
+import App from '../src/app/index';
 import configureStor from '../src/app/configureStore';
 
 const path = require('path');
-const index  = fs.readFileSync(path.resolve(__dirname, '../dist/index.html'), 'utf-8');
+const index  = fs.readFileSync(path.resolve('dist/index.html'), 'utf-8');
 
 function renderFullPage(html, preloadedState){
   const preloadedStateHtml = `
