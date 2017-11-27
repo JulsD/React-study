@@ -19,7 +19,7 @@ const browserConfig = {
   },
   output: {
     path: BUILD_DIR,
-    filename: 'bundle.js',
+    filename: 'assets/bundle.js',
     publicPath: '/'
   },
   module : {
@@ -73,7 +73,7 @@ const browserConfig = {
       template: path.join(SRC_DIR, 'index.html'),
       filename: 'index.html'
     }),
-    new ExtractTextPlugin('styles.css')
+    new ExtractTextPlugin('assets/styles.css')
   ]
 };
 
@@ -86,6 +86,9 @@ const serverConfig = {
     ]
   },
   target: 'node',
+  node: {
+    __dirname: true,
+  },
   output: {
     path: BUILD_DIR,
     filename: 'server.js',

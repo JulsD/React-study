@@ -9,9 +9,9 @@
     "build:watch": "webpack -d --watch",
     "serve": "webpack-dev-server --progress --hot --colors --config ./webpack.config.js",
     "build:prod": "webpack -p",
-    "serve:prod": "node dist/server.js",
-    "prestart": "npm i",
-    "start": "npm run build:prod & npm run serve:prod",
+    "serve:prod": "node dist/server.js dist/assets",
+    "prestart": "npm i && npm run build:prod",
+    "start": "npm run serve:prod",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
