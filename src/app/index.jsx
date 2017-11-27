@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { SearchPage, MoviePage } from './pages';
+import routes from './routes';
 
 class App extends React.Component {
 
@@ -9,9 +9,7 @@ class App extends React.Component {
     return (
       <div>
         <Switch>
-          <Route exact path='/' component={SearchPage}/>
-          <Route path='/movie/:id' component={MoviePage}/>
-          <Route path='/search' component={SearchPage}/>
+          {routes.map(( route, i ) => <Route key={i} {...route}/>)}
         </Switch>
       </div>
     );
