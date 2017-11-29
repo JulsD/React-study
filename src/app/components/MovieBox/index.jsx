@@ -1,2 +1,2 @@
-import MovieBox from './MovieBox';
+import { default as MovieBox } from './MovieBox';
 export default MovieBox;
