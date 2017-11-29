@@ -4,7 +4,7 @@
   "description": "trainig mass",
   "main": "index.js",
   "scripts": {
-    "eslint": "eslint",
+    "lint": "eslint src/app --config ./.eslintrc.js",
     "build": "webpack",
     "build:watch": "webpack -d --watch",
     "serve": "webpack-dev-server --progress --hot --colors --config ./webpack.config.js",
