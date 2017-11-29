@@ -126,7 +126,8 @@ const serverConfig = {
           }
         ]
       }
-    ]
+    ],
+    exprContextCritical: false
   },
   resolve: {
     extensions: ['.js', '.jsx']
